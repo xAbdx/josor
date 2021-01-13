@@ -5,7 +5,6 @@ import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 import { useHistory } from "react-router-dom";
 
-
 const Login = () => {
     const history = useHistory();
     const classes = useStyles();
@@ -17,7 +16,7 @@ const Login = () => {
             <div className={classes.container1}>
                 <div className={classes.container}>
                     <div className={classes.colored}>
-                        <h1>LOGIN</h1>
+                        <h1 className={classes.titleColor}>Login</h1>
                         <TextField id="outlined-basic" label="UserName" variant="outlined" />
                         <TextField className={classes.spaceForm} id="outlined-basic" label="Password" variant="outlined" type="password" />
                         <Button className={clsx(classes.spaceForm, classes.btnColor)} color="primary" variant="contained">Login</Button>

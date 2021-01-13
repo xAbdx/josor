@@ -1,0 +1,23 @@
+import react from "react";
+import JobSection from "../../components/jobPost/JobSection";
+const sections = [
+    { id: 1, name: "tech" },
+    { id: 2, name: "hand made" },
+    { id: 3, name: "kitchen" },
+    { id: 4, name: "sweets" }
+]
+const Home = () => {
+    return (
+        <div >
+            {sections.map((item, index) => {
+                return (
+                    <JobSection key={index}
+                        sectionsName={item.name}
+                    />
+                )
+            })
+            }
+        </div>
+    );
+}
+export default Home;

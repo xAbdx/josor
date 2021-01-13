@@ -17,7 +17,15 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "stretch",
         backgroundColor: "rgb(134,210,252)",
-        background: "linear-gradient(90deg, rgba(134,210,252,1) 0%, rgba(245,184,255,1) 100%)"
+        background: "linear-gradient(90deg, rgba(134,210,252,1) 0%, rgba(245,184,255,1) 100%)",
+        // boxShadow: "3px 4px 8px 0px rgba(0,0,0,0.29) -webkit-box-shadow: 3px 4px 8px 0px rgba(0,0,0,0.29) -moz-box-shadow: 3px 4px 8px 0px rgba(0,0,0,0.29)"
+        // shadowColor: '#000000',
+        // shadowOffset: {
+        //     width: 0,
+        //     height: 3
+        // },
+        // shadowRadius: 5,
+        // shadowOpacity: 1.0
     },
     container2: {
         width: "50%",
@@ -49,7 +57,16 @@ const useStyles = makeStyles((theme) => ({
     },
     btnColor: {
         backgroundColor: "rgb(134,210,252)",
-        background: "linear-gradient(90deg, rgba(134,210,252,1) 0%, rgba(245,184,255,1) 100%)"
+        background: "linear-gradient(90deg, rgba(134,210,252,1) 0%, rgba(245,184,255,1) 100%)",
+        fontSize: "20px",
+        fontWeight: "900"
+    },
+    titleColor: {
+        // color: "#fff",
+        fontSize: "40px",
+        textAlign: "center",
+        fontWeight: "900"
+
     }
 }));
 

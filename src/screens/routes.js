@@ -3,11 +3,12 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link
+    Link,
+    useParams
 } from "react-router-dom";
 import Login from './login/login'
 import SignUp from './signUp/signUp'
-
+import Jobs from './jobs/jobs'
 
 const Routes = () => {
     return (
@@ -19,8 +20,8 @@ const Routes = () => {
                 <Route exact path="/sign-up">
                     <SignUp />
                 </Route>
-                <Route exact path="/jobs">
-                    <p>jobs</p>
+                <Route exact path="/jobs/:id">
+                    <Jobs />
                 </Route>
                 <Route path="/about">
                     <p>about</p>
