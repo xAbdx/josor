@@ -9,6 +9,7 @@ import {
 import Login from './login/login'
 import SignUp from './signUp/signUp'
 import Jobs from './jobs/jobs'
+import Home from './Home/Home'
 
 const Routes = () => {
     return (
@@ -28,6 +29,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/dashboard">
                     <p>dashboard</p>
+                </Route>
+                <Route path="/home">
+                    <Home />
                 </Route>
             </Switch>
         </Router>
