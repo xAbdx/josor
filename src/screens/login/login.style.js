@@ -18,19 +18,14 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "stretch",
         backgroundColor: "rgb(134,210,252)",
         background: "linear-gradient(90deg, rgba(134,210,252,1) 0%, rgba(245,184,255,1) 100%)",
-        // boxShadow: "3px 4px 8px 0px rgba(0,0,0,0.29) -webkit-box-shadow: 3px 4px 8px 0px rgba(0,0,0,0.29) -moz-box-shadow: 3px 4px 8px 0px rgba(0,0,0,0.29)"
-        // shadowColor: '#000000',
-        // shadowOffset: {
-        //     width: 0,
-        //     height: 3
-        // },
-        // shadowRadius: 5,
-        // shadowOpacity: 1.0
+        boxShadow: "3px 4px 8px 0px rgba(0,0,0,0.29) -webkit-box-shadow: 3px 4px 8px 0px rgba(0,0,0,0.29) -moz-box-shadow: 3px 4px 8px 0px rgba(0,0,0,0.29)",
     },
     container2: {
         width: "50%",
         height: "100%",
-        backgroundColor: "#E6F5FE"
+        backgroundColor: "#E6F5FE",
+        display: "flex",
+        justifyContent: "center",
     },
     container: {
         height: "80%",
@@ -41,8 +36,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "stretch",
         backgroundColor: "#fff",
-        borderRadius: "10px",
-
+        borderRadius: "20px",
     },
     colored: {
         display: "flex",
@@ -53,7 +47,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "20px"
     },
     spaceForm: {
-        marginTop: "25px"
+        marginBottom: "15px"
     },
     btnColor: {
         backgroundColor: "rgb(134,210,252)",
@@ -65,8 +59,7 @@ const useStyles = makeStyles((theme) => ({
         // color: "#fff",
         fontSize: "40px",
         textAlign: "center",
-        fontWeight: "900"
-
+        fontWeight: "900",
     }
 }));
 
