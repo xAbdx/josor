@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     logo: {
         color: "#068842",
         // fontWeight: "bold",
-        fontSize: "36px",
+        // fontSize: "36px",
     },
 }));
 

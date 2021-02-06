@@ -2,6 +2,8 @@ import React from "react";
 import { useRouteMatch } from "react-router-dom";
 import useStyles from './jobs.style'
 import JobCard from "../jobCard/jobCard"
+import Header from "../../components/header/header"
+import Footer from "../../components/footer/footer"
 
 const JobsBySection = [
     {
@@ -21,6 +23,12 @@ const JobsBySection = [
         title: "Front-End",
         description: "here is all the new technologies of the front-end 2021",
         date: "December 19"
+    },
+    {
+        id: 4,
+        title: "Writing",
+        description: "this section provide you some wtiting skills",
+        date: "April 11"
     }
 ]
 
@@ -34,12 +42,16 @@ const Jobs = () => {
 
     return (
         <div>
-            {/* <p>id: {params.id}</p> */}
-            {JobsBySection.map((job) => {
-                return (
-                    <JobCard job={job} />
-                )
-            })}
+            <Header />
+            <div className={classes.container}>
+                {/* <p>id: {params.id}</p> */}
+                {JobsBySection.map((job) => {
+                    return (
+                        <JobCard job={job} />
+                    )
+                })}
+            </div>
+            <Footer />
         </div>
     );
 }

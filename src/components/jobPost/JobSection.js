@@ -7,10 +7,8 @@ const JobSection = (props) => {
 
     return (
         <p classesName={classes.box}>
-
             {props.sectionsName}
         </p>
-
     );
 }
 export default JobSection;

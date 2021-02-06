@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     header: {
-        height: "40vh",
+        height: "25vh",
         width: "100%",
         display: "flex",
         justifyContent: "space-between",

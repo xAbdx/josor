@@ -7,8 +7,6 @@ import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import skill1 from "../../img/skill1.png"
-import Jobs from "../jobs/jobs"
-import Header from "../header/header"
 
 const JobCard = (props) => {
     const classes = useStyles();
@@ -17,7 +15,6 @@ const JobCard = (props) => {
     return (
         <div>
             {/* <p key={`job_posts${job.id}`}></p> */}
-            <Header />
             <div className={classes.root}>
                 <Card className={classes.card}>
                     <div className={classes.leftColumn}>

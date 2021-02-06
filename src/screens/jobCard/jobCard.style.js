@@ -4,7 +4,6 @@ const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         justifyContent: "center",
-        backgroundColor: "#EAEAEA",
         height: "60vh",
     },
     card: {

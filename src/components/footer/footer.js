@@ -12,11 +12,13 @@ const Footer = () => {
             <div className={classes.firstColumn}>
                 <h1 className={classes.logo}>Josor</h1>
                 <p>It is a long established fact that a</p>
+                <p>It is a long established fact that a reader</p>
+                <p>distracted by the readable content of a page</p>
             </div>
             <div className={classes.secondColumn}>
                 <h1>Contact Us</h1>
                 <div>
-                    <p>out address...</p>
+                    <p>Old city - Hebron - Palestine</p>
                     <p>phone: 000-000-0000</p>
                     <p>Email: josor@gmail.com</p>
                 </div>
@@ -33,7 +35,7 @@ const Footer = () => {
                         defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua."
                     /> */}
-                    <Button variant="contained" color="secondary">Default</Button>
+                    <Button variant="contained" color="secondary">Submit</Button>
                 </div>
             </div>
         </div>
