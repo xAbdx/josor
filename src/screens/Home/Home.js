@@ -10,7 +10,6 @@ const sections = [
 
 const Home = () => {
     const classes = style();
-    console.log('xxxx  ', classes)
     
     return (
         <div className={classes.page}>
