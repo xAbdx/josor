@@ -26,15 +26,8 @@ const Footer = () => {
             <div className={classes.firstColumn}>
                 <h1>Get in touch</h1>
                 <div className={classes.form}>
-                    <TextField id="filled-basic" label="Email" variant="filled" />
-                    <TextField id="filled-basic" label="Message" variant="filled" />
-                    {/* <TextareaAutosize
-                        rowsMax={4}
-                        aria-label="maximum height"
-                        placeholder="Maximum 4 rows"
-                        defaultValue="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                        ut labore et dolore magna aliqua."
-                    /> */}
+                    <TextField className={classes.itemWidth} id="filled-basic" label="Email" variant="filled" />
+                    <TextareaAutosize className={classes.itemWidthTextarea} id="filled-basic" label="Email" variant="filled" aria-label="minimum height" rowsMin={2} placeholder="Message" />
                     <Button variant="contained" color="secondary">Submit</Button>
                 </div>
             </div>
