@@ -12,6 +12,7 @@ import Jobs from './jobs/jobs'
 import Home from './Home/Home'
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
+import HireMe from '../screens/HireMe/HireMe'
 
 const Routes = () => {
     return (
@@ -40,6 +41,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/header">
                     <Header />
+                </Route>
+                <Route path="/HireMe">
+                    <HireMe />
                 </Route>
             </Switch>
         </Router>

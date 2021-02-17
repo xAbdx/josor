@@ -1,9 +1,11 @@
 import React from "react";
 import useStyles from './header.style'
+import { useHistory } from "react-router-dom";
 
 
 const Header = () => {
     const classes = useStyles();
+    const history = useHistory();
 
     return (
         <div className={classes.header}>
@@ -14,8 +16,8 @@ const Header = () => {
                 <li><a href="" className={classes.link}>Account</a></li>
                 <li><a href="" className={classes.link}>FQA</a></li>
                 <li><a href="" className={classes.link}>Contact</a></li>
-                <li><a href="" className={classes.link}>Wanna Hired?</a></li>
-                <li><a href="" className={classes.link}>Log out</a></li>
+                <li><a href="" className={classes.link} onClick={() => { history.push("../../HireMe") }}>Be Service Provider</a></li>
+                <li><a href="" className={classes.Lastlink} onClick={() => { history.push("../../sign-up") }}>Sign up</a></li>
             </ul>
         </div>
     );

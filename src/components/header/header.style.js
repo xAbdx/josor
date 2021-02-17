@@ -2,11 +2,11 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     header: {
-        height: "25vh",
+        // height: "25vh",
         width: "100%",
         display: "flex",
         justifyContent: "space-between",
-        backgroundColor: "#F5F5F5"
+        // backgroundColor: "#F5F5F5"
     },
     logo: {
         color: "#068842",
@@ -24,7 +24,14 @@ const useStyles = makeStyles((theme) => ({
         textDecoration: "none",
     },
     link: {
-        marginRight: "20px",
+        marginRight: "35px",
+        textDecoration: "none",
+        color: "#000",
+        fontWeight: "500",
+        fontSize: "18px",
+        lineHeight: "21px",
+    },
+    Lastlink: {
         textDecoration: "none",
         color: "#000",
         fontWeight: "500",
