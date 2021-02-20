@@ -28,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
         border: "none",
         padding: "20px 12px 15px 12px",
         font: "inherit",
+        resize: "none",
+        overflowY: "scroll"
     },
 }));
 

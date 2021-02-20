@@ -1,19 +1,19 @@
+import { Box } from "@material-ui/core";
 import react from "react";
 import useStyles from './SectionStyle';
-
 
 const JobSection = (props) => {
     const classes = useStyles();
 
     return (
-        <div >
-            <p>{
+        <Box className={classes.body}  onClick={()=>props.goTo(props.sectionsId)}>
+
+            <p >{
                 props.sectionsName
                 }
-            
             </p>
-            
-           </div>   
+            </Box>
+             
     );
   
 }

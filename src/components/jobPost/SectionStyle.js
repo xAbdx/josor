@@ -11,15 +11,21 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         justifyContent: "center",
     },
-    div: {
-        border: "1px solid",
-        height: "30%",
-        width: "30%",
-        backgroundColor: "#00000"
-
-
-
+    body:{
+        display: "flex",
+        justifyContent: "center",
+        height: "220px",
+        width: "250px",
+        margin: "20px",
+        paddingTop: "30px",
+        boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
+        borderRadius: "20px",
+        fontSize:"40px",
+        textAlign:'center',
+        cursor: "pointer"
     },
+
+    
     
 }))
 
