@@ -3,16 +3,15 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    useParams
+    // Link,
+    // useParams
 } from "react-router-dom";
 import Login from './login/login'
 import SignUp from './signUp/signUp'
 import Jobs from './jobs/jobs'
 import Home from './Home/Home'
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
-import HireMe from '../screens/HireMe/HireMe'
+import HireMe from './HireMe/HireMe'
+
 
 const Routes = () => {
     return (
