@@ -36,13 +36,7 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/footer">
-                    <Footer />
-                </Route>
-                <Route path="/header">
-                    <Header />
-                </Route>
-                <Route path="/HireMe">
+                <Route path="/hire-me">
                     <HireMe />
                 </Route>
             </Switch>

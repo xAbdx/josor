@@ -13,33 +13,33 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "400"
     },
     card: {
-        height: "400px",
+        minHeight: "500px",
         width: "70%",
         boxShadow: "2px 4px 15px rgba(0, 0, 0, 0.17)",
         margin: "auto",
-        display: "flex",
         justifyContent: "center",
         alignItems: "center",
     },
     items: {
-        dispaly: "flex",
+        display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
+        flexWrap: "wrap",
     },
-    item1: {
-        margin: "30px"
-    },
-    item2: {
-        margin: "30px"
-    },
-    item3: {
+    item: {
         margin: "30px",
-        dispaly: "flex"
+        display: "flex",
+        justifyContent: "center",
     },
     btn: {
         color: "#fff",
         backgroundColor: "#068842",
-        width: "200px"
+        width: "200px",
+        padding: "18.5px 14px",
+    },
+    inputField1: {
+        width: "30%",
+        margin: "50px 50px 15px 50px"
     }
 }))
 
