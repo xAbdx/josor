@@ -2,6 +2,10 @@ import react from "react";
 import JobSection from "../../components/jobPost/JobSection";
 import style from "./home.style"
 import { useHistory } from "react-router-dom";
+import Header from "../../components/header/header"
+import Footer from "../../components/footer/footer"
+
+
 
 const sections = [
     { id: 1, name: "tech" },
@@ -18,6 +22,8 @@ const Home = () => {
     }
     
     return (
+        <div>
+        <Header/>
         <div className={classes.page}>
             {sections.map((item, index) => {
                 return (
@@ -27,10 +33,12 @@ const Home = () => {
                          sectionsId={item.id}
                          goTo={goTo}
                          />
-               
-                )
-            })
-            }
+                        )
+                    })
+                }
+            
+            </div>
+            <Footer/>
         </div>
     );
 }
