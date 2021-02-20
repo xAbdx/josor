@@ -3,7 +3,8 @@ import skill1 from "../../img/skill1.png"
 import style from "./jobpost.style"
 import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
-
+import Header from "../../components/header/header"
+import Footer from "../../components/footer/footer"
 
 
 const job={
@@ -22,7 +23,7 @@ const JobPost =(props)=>{
    
     return(
         <div>
-             
+             <Header/>
         <div className={classes.container}>
         <div className={classes.body} >
         
@@ -47,8 +48,8 @@ const JobPost =(props)=>{
                </div>
                 
                 
-                
         </div>
+        <Footer/>
         </div>
     )
 }
