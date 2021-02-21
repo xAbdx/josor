@@ -56,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: "stretch",
+        cursor: "pointer",
     },
     btn: {
         backgroundColor: "#FFFFFF",

@@ -16,9 +16,7 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
         borderRadius: "20px",
     },
-
     container1: {
-
         marginTop: "5%",
         padding: "9px 20px",
         marginRight: "-900px",
@@ -26,12 +24,8 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: "center",
-
     },
-
     img: {
-
-
         height: "220px",
         width: "200px",
         backgroundSize: "cover",
@@ -41,17 +35,13 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "red",
         margin: "30px 0px 0px 20px"
     },
-
-
     title: {
-
         fontSize: "36px",
         fontWeight: "500",
         color: "#068842",
         marginTop: "-101%",
         marginLeft: "111%",
         margin: theme.spacing(1),
-
     },
     date: {
         fontSize: "15px",
@@ -60,8 +50,6 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "111%",
         display: "flex",
         margin: theme.spacing(3),
-
-
     },
     description: {
         textAlign: "left",
@@ -69,9 +57,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "15px",
         marginLeft: "111%",
         display: "flex",
-
         marginTop: "-6%",
-
     },
     btn: {
         backgroundColor: "#FFFFFF",
@@ -81,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
         marginTop: "8%",
     }
-
 }))
 
 export default useStyles; 
