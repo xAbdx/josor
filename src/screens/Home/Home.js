@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import JobSection from "../../components/jobPost/JobSection";
 import style from "./home.style"
 import { useHistory } from "react-router-dom";
