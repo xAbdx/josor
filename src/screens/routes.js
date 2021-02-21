@@ -11,7 +11,7 @@ import SignUp from './signUp/signUp'
 import Jobs from './jobs/jobs'
 import Home from './Home/Home'
 import HireMe from './HireMe/HireMe'
-
+import NewJob from './newJob/newJob'
 
 const Routes = () => {
     return (
@@ -37,6 +37,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/hire-me">
                     <HireMe />
+                </Route>
+                <Route path="/new-job">
+                    <NewJob />
                 </Route>
             </Switch>
         </Router>
