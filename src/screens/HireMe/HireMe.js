@@ -12,30 +12,25 @@ const HireMe = () => {
     return (
         <div>
             <Header />
-
             <div className={classes.container}>
                 <div className={classes.title}>
                     <p>hire me</p>
                 </div>
                 <div className={classes.card}>
                     <div className={classes.items}>
-                        <div className={classes.item1}>
-                            <TextField id="outlined-basic" label="Full Name AF" variant="outlined" />
-                            <TextField id="outlined-basic" label="Phone AF" variant="outlined" />
-                            <TextField required id="outlined-basic" label="Location" variant="outlined" />
-                        </div>
-                        <div className={classes.item2}>
-                            <TextField required id="outlined-basic" label="kind of disability" variant="outlined" />
-                            <TextField required id="outlined-basic" label="Your ID" variant="outlined" />
-                            <TextField required id="outlined-basic" label="Your supporting documents" variant="outlined" />
-                        </div>
-                        <div className={classes.item3}>
-                            <Button
-                                className={classes.btn}
-                                orientation="vertical"
-                                aria-label="vertical contained primary button group"
-                                variant="contained">Submit</Button>
-                        </div>
+                        <TextField className={classes.inputField1} id="outlined-basic" label="Full Name AF" variant="outlined" disabled />
+                        <TextField className={classes.inputField1} id="outlined-basic" label="Phone AF" variant="outlined" disabled />
+                        <TextField className={classes.inputField1} required id="outlined-basic" label="Location" variant="outlined" />
+                        <TextField className={classes.inputField1} required id="outlined-basic" label="kind of disability" variant="outlined" />
+                        <TextField className={classes.inputField1} required id="outlined-basic" label="Your ID" variant="outlined" />
+                        <TextField className={classes.inputField1} required id="outlined-basic" label="Your supporting documents" variant="outlined" />
+                    </div>
+                    <div className={classes.item}>
+                        <Button
+                            className={classes.btn}
+                            orientation="vertical"
+                            aria-label="vertical contained primary button group"
+                            variant="contained">Submit</Button>
                     </div>
                 </div>
             </div>

@@ -3,18 +3,15 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
-    useParams
+    // Link,
+    // useParams
 } from "react-router-dom";
 import Login from './login/login'
 import SignUp from './signUp/signUp'
 import Jobs from './jobs/jobs'
 import Home from './Home/Home'
-import Header from '../components/header/header'
-import Footer from '../components/footer/footer'
-import JobPost from './jobPost/jobPost'
 import HireMe from './HireMe/HireMe'
-
+import JobSection from "./jobPost/jobPost";
 
 const Routes = () => {
     return (
@@ -38,20 +35,12 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/footer">
-                    <Footer />
-                </Route>
-                <Route path="/header">
-                    <Header />
-                </Route>
-                <Route path="/job-post/:id">
-                    <JobPost />
-                    </Route>
-                    <Route path="/HireMe">
+                <Route path="/hire-me">
                     <HireMe />
                 </Route>
-                
-                
+                <Route path="/job-section">
+                    <JobSection />
+                </Route>
             </Switch>
         </Router>
     );

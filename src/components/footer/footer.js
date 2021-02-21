@@ -11,9 +11,8 @@ const Footer = () => {
         <div className={classes.footerContainer}>
             <div className={classes.firstColumn}>
                 <h1 className={classes.logo}>Josor</h1>
-                <p>It is a long established fact that a</p>
-                <p>It is a long established fact that a reader</p>
-                <p>distracted by the readable content of a page</p>
+                <hr />
+                <p>Made with love ❤ by JOSOR's team &trade; &copy;</p>
             </div>
             <div className={classes.secondColumn}>
                 <h1>Contact Us</h1>
@@ -27,7 +26,7 @@ const Footer = () => {
                 <h1>Get in touch</h1>
                 <div className={classes.form}>
                     <TextField className={classes.itemWidth} id="filled-basic" label="Email" variant="filled" />
-                    <TextareaAutosize className={classes.itemWidthTextarea} id="filled-basic" label="Email" variant="filled" aria-label="minimum height" rowsMin={2} placeholder="Message" />
+                    {/* <TextareaAutosize className={classes.itemWidthTextarea} id="filled-basic" label="Email" variant="filled" aria-label="minimum height" rowsMin={2} placeholder="Message" /> */}
                     <Button variant="contained" color="secondary">Submit</Button>
                 </div>
             </div>
