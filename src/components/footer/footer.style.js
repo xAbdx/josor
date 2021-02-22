@@ -7,10 +7,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-around",
     },
     form: {
-        '& > *': {
-            margin: theme.spacing(1),
-            width: '27.5ch',
-        },
         display: "flex",
         flexDirection: "column"
     },
@@ -20,17 +16,20 @@ const useStyles = makeStyles((theme) => ({
         // fontSize: "36px",
     },
     itemWidth: {
-        width: "93%"
+        marginBottom: "10px",
     },
-    itemWidthTextarea: {
-        width: "82.5%",
-        backgroundColor: "#d5d5d5",
-        border: "none",
-        padding: "20px 12px 15px 12px",
-        font: "inherit",
-        resize: "none",
-        overflowY: "scroll"
-    },
+    // itemWidthTextarea: {
+    //     width: "82.5%",
+    //     backgroundColor: "#d5d5d5",
+    //     border: "none",
+    //     padding: "20px 12px 15px 12px",
+    //     font: "inherit",
+    //     resize: "none",
+    //     overflowY: "scroll"
+    // },
+    btn: {
+        backgroundColor: "#068842",
+    }
 }));
 
 export default useStyles; 
