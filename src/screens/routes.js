@@ -13,6 +13,7 @@ import Home from './Home/Home'
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
 import HireMe from '../screens/HireMe/HireMe'
+import FAQ from "../question/question";
 
 const Routes = () => {
     return (
@@ -36,14 +37,11 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/footer">
-                    <Footer />
-                </Route>
-                <Route path="/header">
-                    <Header />
-                </Route>
                 <Route path="/HireMe">
                     <HireMe />
+                </Route>
+                <Route path="/faq">
+                    <FAQ />
                 </Route>
             </Switch>
         </Router>

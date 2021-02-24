@@ -14,7 +14,7 @@ const Header = () => {
                 <li><a href="" className={classes.link}>Home</a></li>
                 <li><a href="" className={classes.link}>Jobs</a></li>
                 <li><a href="" className={classes.link}>Account</a></li>
-                <li><a href="" className={classes.link}>FQA</a></li>
+                <li><a href="" className={classes.link} onClick={() => { history.push("/faq") }}>FQA</a></li>
                 <li><a href="" className={classes.link}>Contact</a></li>
                 <li><a href="" className={classes.link} onClick={() => { history.push("../../HireMe") }}>Be Service Provider</a></li>
                 <li><a href="" className={classes.Lastlink} onClick={() => { history.push("../../sign-up") }}>Sign up</a></li>
