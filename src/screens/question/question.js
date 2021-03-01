@@ -1,7 +1,9 @@
 import Header from "../components/header/header";
 import Footer from "../components/footer/footer";
 import Icon from '@material-ui/';
-import { AddCircleOutlineIcon } from '@material-ui/icons/';
+import { AddCircleOutline } from '@material-ui/icons/';
+import classes from "*.module.css";
+
 
 
 
@@ -26,10 +28,19 @@ const question = () => {
             {
                 objs.map((item) => {
                     return (
-                        <div>
+                        <div className={classes.question}>
+                            {sections.map((item, index) => {
 
-                            <AddCircleOutlineIcon />
-                            { item.question}
+                                <AddCircleOutline />
+                                { item.question }
+
+                            }
+
+                            )
+
+
+                            }
+
 
                         </div>
                     )
