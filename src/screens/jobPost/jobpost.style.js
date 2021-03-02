@@ -61,7 +61,6 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "500",
         margin: "-9px 0px 15px 0px",
         marginLeft: "111%",
-        display: "flex",
         margin: theme.spacing(3),
         display: "ruby",
     },
