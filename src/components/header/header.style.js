@@ -1,6 +1,10 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        width: 500,
+        color: "#068842"
+    },
     header: {
         // height: "25vh",
         width: "100%",
