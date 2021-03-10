@@ -14,7 +14,7 @@ import HireMe from './HireMe/HireMe'
 import NewJob from './newJob/newJob'
 import JobSection from "./jobPost/jobPost";
 import NewService from "../components/newService/newService";
-
+import Question from "./question/question"
 const Routes = () => {
     return (
         <Router>
@@ -37,7 +37,7 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/HireMe">
+                <Route path="/hire-me">
                     <HireMe />
                 </Route>
                 <Route path="/new-job">
@@ -46,8 +46,8 @@ const Routes = () => {
                 <Route path="/job-section">
                     <JobSection />
                 </Route>
-                <Route path="/new-service">
-                    <NewService />
+                <Route path="/faq">
+                    <Question />
                 </Route>
             </Switch>
         </Router>

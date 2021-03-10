@@ -10,6 +10,7 @@ const useStyles = makeStyles((theme) => ({
         width: "100%",
         display: "flex",
         justifyContent: "space-between",
+        alignItems: "center",
         // backgroundColor: "#F5F5F5"
     },
     logo: {
@@ -41,7 +42,10 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "500",
         fontSize: "18px",
         lineHeight: "21px",
+    },
+    activeStyle: {
+        color: "#068842",
     }
 }));
 
-export default useStyles; 
+export default useStyles;
