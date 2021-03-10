@@ -17,13 +17,26 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "20px",
     },
     container1: {
-        marginTop: "5%",
-        padding: "9px 20px",
+        marginTop: "30%",
+        padding: "9px 177px",
         marginRight: "-900px",
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: "center",
+        width: "max-content",
+        marginLeft: "10px",
+    },
+
+    body2:{
+        display: "flex",
+        justifyContent: "space-between",
+        height: "400px",
+        width: "80%",
+        margin: "20px",
+        boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
+        borderRadius: "20px",
+
     },
     img: {
         height: "220px",
@@ -39,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "36px",
         fontWeight: "500",
         color: "#068842",
-        marginTop: "-101%",
+        marginTop: "-104%",
         marginLeft: "111%",
         margin: theme.spacing(1),
     },
@@ -48,8 +61,8 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "500",
         margin: "-9px 0px 15px 0px",
         marginLeft: "111%",
-        display: "flex",
         margin: theme.spacing(3),
+        display: "ruby",
     },
     description: {
         textAlign: "left",
@@ -57,7 +70,8 @@ const useStyles = makeStyles((theme) => ({
         fontSize: "15px",
         marginLeft: "111%",
         display: "flex",
-        marginTop: "-6%",
+        marginTop: "20%",
+        display: "block ruby",
     },
     btn: {
         backgroundColor: "#FFFFFF",
@@ -65,7 +79,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "6%",
         margin: theme.spacing(21),
         boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
-        marginTop: "8%",
+        marginTop: "19%",
     }
 }))
 

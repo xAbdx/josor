@@ -27,9 +27,11 @@ const JobPost = (props) => {
                             image={skill1}
                             title="skills image"
                         />
+                        
                         <div className={classes.title}>{job.title}</div>
                         <div className={classes.date}>{job.date}</div>
                         <div className={classes.description}>{job.description}</div>
+                        
                         <div className={classes.container1}>
                             <Button className={classes.btn} size="small" variant="outlined" color="secondary">Apply</Button>
                             <Button className={classes.btn} size="small" variant="outlined" color="secondary">$300.00</Button>

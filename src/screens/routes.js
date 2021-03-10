@@ -13,6 +13,7 @@ import Home from './Home/Home'
 import HireMe from './HireMe/HireMe'
 import NewJob from './newJob/newJob'
 import JobSection from "./jobPost/jobPost";
+//import FAQ from "./question/question"
 
 const Routes = () => {
     return (
@@ -36,7 +37,7 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/hire-me">
+                <Route path="/HireMe">
                     <HireMe />
                 </Route>
                 <Route path="/new-job">
@@ -45,6 +46,7 @@ const Routes = () => {
                 <Route path="/job-section">
                     <JobSection />
                 </Route>
+                
             </Switch>
         </Router>
     );
