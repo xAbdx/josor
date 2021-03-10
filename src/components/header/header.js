@@ -16,8 +16,10 @@ const Header = () => {
                 <li><a href="" className={classes.link}>Account</a></li>
                 <li><a href="" className={classes.link}>FQA</a></li>
                 <li><a href="" className={classes.link}>Contact</a></li>
+                <li><a href="" className={classes.link} onClick={() => { history.push("/new-job") }}>New Job</a></li>
                 <li><a href="" className={classes.link} onClick={() => { history.push("/hire-me") }}>Be Service Provider</a></li>
                 <li><a href="" className={classes.Lastlink} onClick={() => { history.push("../../sign-up") }}>Sign up</a></li>
+
             </ul>
         </div>
     );
