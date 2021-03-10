@@ -4,8 +4,9 @@ const useStyles = makeStyles((theme) => ({
     root: {
         backgroundColor: "#F5F5F5",
         display: "flex",
-        justifyContent: "space-around",
+        justifyContent: "space-between",
         alignItems: "center",
+        padding: "60px 0 0 0",
     },
     title: {
         fontSize: "35px"
@@ -16,14 +17,17 @@ const useStyles = makeStyles((theme) => ({
     country: {
         color: "#068842"
     },
-    // left: {
-    //     display: "block",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    // },
+    rightColumn: {
+        margin: "0 0 0 50px"
+    },
+    leftColumn: {
+        margin: "0 50px 0 0",
+        maxWidth: "200px"
+    },
     btn: {
-        margin: "0 0 10px 0",
-        minWidth: "300px"
+        margin: "0 0 15px 0",
+        width: "100%",
+        backgroundColor: "#fff"
     }
 }));
 

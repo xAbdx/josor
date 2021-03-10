@@ -25,7 +25,6 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-between",
         padding: "23px",
         height: "20px",
-        marginRight: "50px",
         textDecoration: "none",
     },
     link: {
