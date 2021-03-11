@@ -37,6 +37,8 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#068842",
         width: "200px",
         padding: "18.5px 14px",
+        display: "flex",
+        margin: theme.spacing(1),
     },
     inputField1: {
         width: "30%",

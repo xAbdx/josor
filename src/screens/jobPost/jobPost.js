@@ -20,27 +20,31 @@ const JobPost = (props) => {
         <div>
             <Header />
             <div className={classes.container}>
-                <div className={classes.body} >
-                    <div>
-                        <CardMedia
+            <div className={classes.card}><CardMedia
                             className={classes.img}
                             image={skill1}
                             title="skills image"
-                        />
-                        
+                        /><div>
+                    
+                                    
+                             
+                                 </div>
+                                 <div>
                         <div className={classes.title}>{job.title}</div>
                         <div className={classes.date}>{job.date}</div>
                         <div className={classes.description}>{job.description}</div>
                         
-                        <div className={classes.container1}>
-                            <Button className={classes.btn} size="small" variant="outlined" color="secondary">Apply</Button>
-                            <Button className={classes.btn} size="small" variant="outlined" color="secondary">$300.00</Button>
+                        <div className={classes.item}>
+                            <Button className={classes.btn} orientation="vertical" aria-label="vertical contained primary button group" variant="contained">Apply</Button>
+                            <Button className={classes.btn} variant="contained" >300.00$</Button>
                         </div>
                     </div>
                 </div>
             </div>
             <Footer />
         </div>
+       
+        
     )
 }
 export default JobPost;
