@@ -1,10 +1,8 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
-
     container: {
         display: "block",
-        margin: "70px 0px 70px 0px",
         width: "100%",
     },
     title: {
@@ -17,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         minHeight: "500px",
         width: "70%",
         boxShadow: "2px 4px 15px rgba(0, 0, 0, 0.17)",
-        margin: "auto",
+        margin: "70px auto",
         justifyContent: "center",
         alignItems: "center",
     },
@@ -44,9 +42,6 @@ const useStyles = makeStyles((theme) => ({
         width: "30%",
         margin: "50px 50px 15px 50px"
     }
-
 }));
 
-
-
-export default useStyles; 
+export default useStyles;

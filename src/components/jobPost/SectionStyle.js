@@ -8,10 +8,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "stretch",
         border: "1px solid black",
-        alignItems: "center",
-        justifyContent: "center",
     },
-    body:{
+    body: {
         display: "flex",
         justifyContent: "center",
         height: "220px",
@@ -20,13 +18,13 @@ const useStyles = makeStyles((theme) => ({
         paddingTop: "30px",
         boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
         borderRadius: "20px",
-        fontSize:"40px",
-        textAlign:'center',
+        fontSize: "40px",
+        textAlign: 'center',
         cursor: "pointer"
     },
 
-    
-    
+
+
 }))
 
-export default useStyles; 
+export default useStyles;

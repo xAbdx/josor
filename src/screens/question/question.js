@@ -20,7 +20,7 @@ const objs = [
         id: 2
     }
 ]
-const question = () => {
+const Question = () => {
 
     return (
         <div>
@@ -28,10 +28,10 @@ const question = () => {
             {
                 objs.map((item) => {
                     return (
-                        <div className={classes.question}>
-                            {objs.map((item, index) => {
+                        <div>
+                            {/* {objs.map((item, index) => {
 
-                               // <AddCircleOutline />
+                                // <AddCircleOutline />
                                 { item.question }
 
                             }
@@ -40,8 +40,8 @@ const question = () => {
 
 
                             }
-
-
+ */}
+hi
                         </div>
                     )
                 })
@@ -54,5 +54,5 @@ const question = () => {
     )
 }
 
-export default question;
+export default Question;
 

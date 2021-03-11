@@ -23,7 +23,7 @@ const NewJob = () => {
         <div className={classes.container}>
             <Header />
             <div className={classes.title}>
-                <p>NewJob</p>
+                <p>New Job</p>
             </div>
             <div className={classes.card}>
                 <div className={classes.items}>
