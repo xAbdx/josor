@@ -34,7 +34,7 @@ const NewJob = () => {
                         <TextField className={classes.inputField1} id="outlined-basic" label="Type of service" variant="outlined" value={data.Typeofservice} name="Type of service" onChange={handleChange} ></TextField>
                         <div className={classes.item}>
                             <Button className={classes.btn} orientation="vertical" aria-label="vertical contained primary button group" variant="contained">Submit</Button>
-                            <Button variant="contained" onClick={() => history.push("/home")}>Cancel</Button>
+                            <Button className={classes.btn} variant="contained" onClick={() => history.push("/home")}>Cancel</Button>
                         </div>
                     </div>
                 </div>

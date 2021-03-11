@@ -2,41 +2,36 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        display: "flex",
+        display: "block",
+        margin: "15px 0px 70px 0px",
+        width: "100%",
+    },
+
+
+    card: {
+        minHeight: "300px",
+        width: "70%",
+        boxShadow: "2px 4px 15px rgba(0, 0, 0, 0.17)",
+        margin: "auto",
         justifyContent: "center",
-        height: "80vh",
-        backgroundColor: "#F5F5F5"
+        alignItems: "center",
+        padding:"15px",
+        borderRadius: "10px"
     },
-    body: {
+    items: {
         display: "flex",
-        justifyContent: "space-between",
-        height: "400px",
-        width: "80%",
-        margin: "20px",
-        boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
-        borderRadius: "20px",
-    },
-    container1: {
-        marginTop: "30%",
-        padding: "9px 177px",
-        marginRight: "-900px",
-        display: "flex",
-        flexDirection: "row",
         justifyContent: "space-evenly",
         alignItems: "center",
-        width: "max-content",
-        marginLeft: "10px",
+        flexWrap: "wrap",
     },
+    
 
-    body2:{
+    item: {
+        margin: "8px",
         display: "flex",
-        justifyContent: "space-between",
-        height: "400px",
-        width: "80%",
-        margin: "20px",
-        boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
-        borderRadius: "20px",
-
+        justifyContent: "space-evenly",
+        marginTop:"19%"
+        
     },
     img: {
         height: "220px",
@@ -49,37 +44,34 @@ const useStyles = makeStyles((theme) => ({
         margin: "30px 0px 0px 20px"
     },
     title: {
-        fontSize: "36px",
-        fontWeight: "500",
-        color: "#068842",
-        marginTop: "-104%",
-        marginLeft: "111%",
-        margin: theme.spacing(1),
-    },
+        
+            color: "#068842",
+            fontSize: "36px",
+            fontWeight: "500",
+            marginLeft: "24%",
+            marginTop: "-220px",
+            },
     date: {
         fontSize: "15px",
         fontWeight: "500",
-        margin: "-9px 0px 15px 0px",
-        marginLeft: "111%",
-        margin: theme.spacing(3),
-        display: "ruby",
+        marginLeft: "24%",
+        margin:"15px"
     },
     description: {
-        textAlign: "left",
-        textJustify: "inter-word",
         fontSize: "15px",
-        marginLeft: "111%",
-        display: "flex",
-        marginTop: "20%",
-        display: "block ruby",
+        marginTop:"1%",
+        marginLeft: "24%",
+        
     },
     btn: {
-        backgroundColor: "#FFFFFF",
-        padding: "11px 27px",
-        marginLeft: "6%",
-        margin: theme.spacing(21),
-        boxShadow: "2px 4px 8px rgba(0, 0, 0, 0.15)",
-        marginTop: "19%",
+        color: "#068842",
+        //backgroundColor: "#068842",
+        width: "14.5%",
+        padding: "8px",
+        display: "flex",
+        
+     
+       
     }
 }))
 
