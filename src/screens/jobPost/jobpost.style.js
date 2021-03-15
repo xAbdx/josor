@@ -65,7 +65,6 @@ const useStyles = makeStyles((theme) => ({
     },
     btn: {
         color: "#068842",
-        //backgroundColor: "#068842",
         width: "14.5%",
         padding: "8px",
         display: "flex",

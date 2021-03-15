@@ -24,7 +24,7 @@ const Header = () => {
                         new job
                     </NavLink></li> */}
 
-                    <li><NavLink exact to="/hire-me" activeClassName={classes.activeStyle} className={classes.link}>Be Service Provider</NavLink></li>
+                    <li><NavLink exact to="/hireme" activeClassName={classes.activeStyle} className={classes.link}>Be Service Provider</NavLink></li>
 
                     <li><NavLink exact to="/sign-up" activeClassName={classes.activeStyle} className={classes.link}>Sign up</NavLink></li>
                 </ul>
