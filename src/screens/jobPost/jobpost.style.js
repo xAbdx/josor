@@ -1,67 +1,63 @@
 import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme) => ({
+    root: {
+        display: "flex",
+        justifyContent: "center",
+        backgroundColor: "#F5F5F5",
+    },
     container: {
         display: "block",
         margin: "15px 0px 70px 0px",
         width: "100%",
     },
-
-
     card: {
         minHeight: "300px",
         width: "70%",
         boxShadow: "2px 4px 15px rgba(0, 0, 0, 0.17)",
-        margin: "auto",
+        margin: "50px auto",
         justifyContent: "center",
         alignItems: "center",
-        padding:"15px",
+        padding: "15px",
         borderRadius: "10px"
     },
-    items: {
-        display: "flex",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        flexWrap: "wrap",
-    },
-    
-
-    item: {
-        margin: "8px",
-        display: "flex",
-        justifyContent: "space-evenly",
-        marginTop:"19%"
-        
-    },
-    img: {
-        height: "220px",
-        width: "200px",
-        backgroundSize: "cover",
+    media: {
+        height: "350px",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
         borderRadius: "10px",
-        backgroundColor: "red",
-        margin: "30px 0px 0px 20px"
+        backgroundColor: "#F5F5F5",
+        margin: "10px auto"
     },
     title: {
-        
-            color: "#068842",
-            fontSize: "36px",
-            fontWeight: "500",
-            marginLeft: "24%",
-            marginTop: "-220px",
-            },
+        fontSize: "36px",
+        fontWeight: "500",
+        color: "#068842",
+        marginTop: "15px"
+    },
     date: {
         fontSize: "15px",
         fontWeight: "500",
-        marginLeft: "24%",
-        margin:"15px"
+        margin: "15px 0px 15px 0px"
     },
     description: {
-        fontSize: "15px",
-        marginTop:"1%",
-        marginLeft: "24%",
-        
+        textAlign: "justify",
+        fontSize: "16px",
+    },
+    rightColumn: {
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        margin: "20px 0"
+    },
+    priceContainer: {
+        margin: "0 0 0 15px",
+        fontSize: "20px",
+    },
+    price: {
+        color: "#068842",
+        fontWeight: "bold",
     },
     btn: {
         color: "#068842",
@@ -74,4 +70,4 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default useStyles; 
+export default useStyles;
