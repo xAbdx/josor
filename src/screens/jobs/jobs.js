@@ -14,6 +14,7 @@ const Jobs = () => {
         const response = await axios.get("http://localhost/api/jobs.php");
         setJobsBySection(response.data);
         console.log(response);
+        //delete me
     }
     useEffect(() => {
         GetJobsFromDB();
