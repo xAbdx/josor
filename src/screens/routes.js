@@ -6,15 +6,15 @@ import {
     // Link,
     // useParams
 } from "react-router-dom";
-import Login from './login/login'
-import SignUp from './signUp/signUp'
-import Jobs from './jobs/jobs'
-import Home from './Home/Home'
-import HireMe from './HireMe/HireMe'
-import NewJob from './newJob/newJob'
+import Login from './login/login';
+import SignUp from './signUp/signUp';
+import Jobs from './jobs/jobs';
+import Home from './Home/Home';
+import HireMe from './HireMe/HireMe';
+import NewJob from './newJob/newJob';
 import JobSection from "./jobPost/jobPost";
-import NewService from "../components/newService/newService";
-import Question from "./question/question"
+import Question from "./question/question";
+
 const Routes = () => {
     return (
         <Router>
@@ -37,7 +37,7 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/hireme">
+                <Route path="/hire-me">
                     <HireMe />
                 </Route>
                 <Route path="/new-job">
