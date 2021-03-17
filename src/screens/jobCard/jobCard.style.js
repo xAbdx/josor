@@ -28,9 +28,11 @@ const useStyles = makeStyles((theme) => ({
     },
     description: {
         textAlign: "justify",
-        textJustify: "inter-word",
         fontSize: "15px",
-        // color: "#000", when i use this, the style of the title ruined
+        textOverflow: "ellipsis",
+        overflow: "hidden",
+        maxHeight: "132px",
+        // border: "1px solid #000000",
     },
     media: {
         height: "220px",
@@ -64,4 +66,4 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-export default useStyles; 
+export default useStyles;

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 
 import Button from '@material-ui/core/Button';
 import { MdAdd } from "react-icons/md";
-import { MdAttachFile } from "react-icons/md";
+// import { MdAttachFile } from "react-icons/md";
 
 
 const NewService = () => {
@@ -20,9 +20,9 @@ const NewService = () => {
                 <div className={classes.btn}>
                     <Button variant="contained" endIcon={<MdAdd />} onClick={() => { history.push("/new-job") }}>Add new service</Button>
                 </div>
-                <div className={classes.btn}>
-                    <Button variant="contained" endIcon={<MdAttachFile />}>Most Recent</Button>
-                </div>
+                {/* <div className={classes.btn}>
+                    <Button variant="contained" endIcon={<MdAttachFile />}>Most Recent    </Button>
+                </div> */}
             </div>
         </div>
     );

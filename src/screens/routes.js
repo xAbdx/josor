@@ -37,7 +37,7 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/hire-me">
+                <Route path="/hireme">
                     <HireMe />
                 </Route>
                 <Route path="/new-job">

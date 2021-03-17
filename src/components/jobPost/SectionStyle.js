@@ -22,9 +22,6 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         cursor: "pointer"
     },
-
-
-
 }))
 
 export default useStyles;

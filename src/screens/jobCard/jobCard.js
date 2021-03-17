@@ -27,7 +27,7 @@ const JobCard = (props) => {
                             <CardMedia
                                 className={classes.media}
                                 image={skill1}
-                                title="skills image"
+                                title=""
                             />
                         </div>
                         <div>
@@ -45,7 +45,7 @@ const JobCard = (props) => {
                         </div>
                     </div>
                     <div className={classes.rightColumn}>
-                        <Button className={classes.btn} size="small">$300.00</Button>
+                        <p className={classes.btn}>$300.00</p>
                         <Button className={classes.btn} size="small">Apply</Button>
                     </div>
                 </Card>
