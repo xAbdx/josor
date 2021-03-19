@@ -36,7 +36,7 @@ const JobCard = (props) => {
                                     {job.title}
                                 </Typography>
                                 <Typography className={classes.date} color="textSecondary">
-                                    {job.date}
+                                    {job.createdDate}
                                 </Typography>
                                 <Typography variant="body2" component="p" className={classes.description}>
                                     {job.description}
@@ -45,7 +45,7 @@ const JobCard = (props) => {
                         </div>
                     </div>
                     <div className={classes.rightColumn}>
-                        <p className={classes.btn}>$300.00</p>
+                        <p className={classes.btn}>${job.price}</p>
                         <Button className={classes.btn} size="small">Apply</Button>
                     </div>
                 </Card>
