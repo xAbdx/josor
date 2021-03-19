@@ -6,21 +6,12 @@ import {
     // Link,
     // useParams
 } from "react-router-dom";
-<<<<<<< HEAD
-import Login from './login/login'
-import SignUp from './signUp/signUp'
-import Jobs from './jobs/jobs'
-import Home from './Home/Home'
-import HireMe from './Hire-Me/Hire-Me'
-import NewJob from './newJob/newJob'
-=======
 import Login from './login/login';
 import SignUp from './signUp/signUp';
 import Jobs from './jobs/jobs';
 import Home from './Home/Home';
-import HireMe from './HireMe/HireMe';
+import HireMe from './Hire-Me/Hire-Me';
 import NewJob from './newJob/newJob';
->>>>>>> 50097b063a160ecdcf4da16706fb2ca4ac2a48a5
 import JobSection from "./jobPost/jobPost";
 import Question from "./question/question";
 
