@@ -10,16 +10,13 @@ import Login from './login/login'
 import SignUp from './signUp/signUp'
 import Jobs from './jobs/jobs'
 import Home from './Home/Home'
-<<<<<<< HEAD
 import Header from '../components/header/header'
 import Footer from '../components/footer/footer'
 import HireMe from '../screens/HireMe/HireMe'
 import FAQ from "../question/question";
-=======
 import HireMe from './HireMe/HireMe'
 import NewJob from './newJob/newJob'
 import JobSection from "./jobPost/jobPost";
->>>>>>> 09245e623391c4a093242128808ff155efba2178
 
 const Routes = () => {
     return (
@@ -43,10 +40,6 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-<<<<<<< HEAD
-                <Route path="/HireMe">
-                    <HireMe />
-=======
                 <Route path="/hire-me">
                     <HireMe />
                 </Route>
@@ -55,7 +48,6 @@ const Routes = () => {
                 </Route>
                 <Route path="/job-section">
                     <JobSection />
->>>>>>> 09245e623391c4a093242128808ff155efba2178
                 </Route>
                 <Route path="/faq">
                     <FAQ />
