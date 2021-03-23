@@ -25,14 +25,29 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         flexWrap: "wrap",
     },
-    item: {
-        margin: "30px",
+    item1: {
+        margin: "30px auto",
         display: "flex",
-        justifyContent: "center",
+        justifyContent: "space-evenly",
+        alignItems: "center",
+        flexWrap: "wrap",
+    },
+    item2: {
+        margin: "30px auto",
+        display: "flex",
+        justifyContent: "space-evenly",
+        alignItems: "center",
     },
     btn: {
         color: "#fff",
         backgroundColor: "#068842",
+        width: "200px",
+        padding: "18.5px 14px",
+        display: "flex",
+        margin: theme.spacing(1),
+    },
+    btnCancel: {
+        backgroundColor: "secondary",
         width: "200px",
         padding: "18.5px 14px",
         display: "flex",
