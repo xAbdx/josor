@@ -27,7 +27,7 @@ const JobCard = (props) => {
                             <CardMedia
                                 className={classes.media}
                                 image={skill1}
-                                title="skills image"
+                                title=""
                             />
                         </div>
                         <div>
@@ -36,7 +36,7 @@ const JobCard = (props) => {
                                     {job.title}
                                 </Typography>
                                 <Typography className={classes.date} color="textSecondary">
-                                    {job.date}
+                                    {job.createdDate}
                                 </Typography>
                                 <Typography variant="body2" component="p" className={classes.description}>
                                     {job.description}
@@ -45,7 +45,7 @@ const JobCard = (props) => {
                         </div>
                     </div>
                     <div className={classes.rightColumn}>
-                        <Button className={classes.btn} size="small">$300.00</Button>
+                        <p className={classes.btn}>${job.price}</p>
                         <Button className={classes.btn} size="small">Apply</Button>
                     </div>
                 </Card>

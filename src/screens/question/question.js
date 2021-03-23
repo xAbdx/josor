@@ -1,8 +1,8 @@
-import Header from "../components/header/header";
-import Footer from "../components/footer/footer";
-import Icon from '@material-ui/';
-import { AddCircleOutline } from '@material-ui/icons/';
-import classes from "*.module.css";
+//import Icon from '@material-ui/';
+//import { AddCircleOutline } from '@material-ui/icon/';
+import Header from "../../components/header/header";
+import Footer from "../../components/footer/footer";
+
 
 
 
@@ -20,7 +20,7 @@ const objs = [
         id: 2
     }
 ]
-const question = () => {
+const Question = () => {
 
     return (
         <div>
@@ -28,10 +28,10 @@ const question = () => {
             {
                 objs.map((item) => {
                     return (
-                        <div className={classes.question}>
-                            {sections.map((item, index) => {
+                        <div>
+                            {/* {objs.map((item, index) => {
 
-                                <AddCircleOutline />
+                                // <AddCircleOutline />
                                 { item.question }
 
                             }
@@ -40,8 +40,8 @@ const question = () => {
 
 
                             }
-
-
+ */}
+hi
                         </div>
                     )
                 })
@@ -54,5 +54,5 @@ const question = () => {
     )
 }
 
-export default question;
+export default Question;
 

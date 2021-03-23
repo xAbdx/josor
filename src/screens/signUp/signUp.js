@@ -32,7 +32,7 @@ const SingUp = () => {
                             <TextField id="outlined-basic" label="Email" variant="outlined" value={data.email} onChange={handleChange} name="email" onChange={handleChange} />
                             <TextField id="outlined-basic" label="Password" variant="outlined" type="password" value={data.password} name="password" onChange={handleChange} />
                             <TextField id="outlined-basic" label="confirm password" variant="outlined" type="password" value={data.confirmPassword} name="confirmPassword" onChange={handleChange} />
-                            <Button className={classes.submet, classes.Color} variant="contained">SION UP</Button>
+                            <Button className={classes.submet, classes.Color} variant="contained">SIGN UP</Button>
                             <Button className={classes.submet} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("") }}> Have an account login</Button>
                         </div>
                     </div>

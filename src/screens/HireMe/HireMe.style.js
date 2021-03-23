@@ -40,6 +40,16 @@ const useStyles = makeStyles((theme) => ({
     inputField1: {
         width: "30%",
         margin: "50px 50px 15px 50px"
+    },
+    input: {
+        display: 'none',
+    },
+    inputImage: {
+        width: "80%",
+        margin:  "40px auto",
+        display: "flex",
+        justifyContent: "space-evenly",
+        alignItems: "center",
     }
 }))
 
