@@ -5,6 +5,8 @@ import JobCard from "../jobCard/jobCard"
 import Header from "../../components/header/header"
 import Footer from "../../components/footer/footer"
 import axios from 'axios';
+
+
 const Jobs = () => {
     const classes = useStyles();
     let { params } = useRouteMatch();

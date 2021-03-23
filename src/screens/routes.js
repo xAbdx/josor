@@ -10,7 +10,7 @@ import Login from './login/login';
 import SignUp from './signUp/signUp';
 import Jobs from './jobs/jobs';
 import Home from './Home/Home';
-import HireMe from './Hire-Me/Hire-Me';
+import HireMe from './HireMe/HireMe';
 import NewJob from './newJob/newJob';
 import JobSection from "./jobPost/jobPost";
 import Question from "./question/question";
@@ -37,7 +37,7 @@ const Routes = () => {
                 <Route path="/home">
                     <Home />
                 </Route>
-                <Route path="/hire-me">
+                <Route path="/hireme">
                     <HireMe />
                 </Route>
                 <Route path="/new-job">
