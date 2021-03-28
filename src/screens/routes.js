@@ -6,14 +6,15 @@ import {
     // Link,
     // useParams
 } from "react-router-dom";
-import Login from './login/login'
-import SignUp from './signUp/signUp'
-import Jobs from './jobs/jobs'
-import Home from './Home/Home'
-import HireMe from './HireMe/HireMe'
-import NewJob from './newJob/newJob'
+import Login from './login/login';
+import SignUp from './signUp/signUp';
+import Jobs from './jobs/jobs';
+import Home from './Home/Home';
+import HireMe from './HireMe/HireMe';
+import NewJob from './newJob/newJob';
 import JobSection from "./jobPost/jobPost";
-//import FAQ from "./question/question"
+import Question from "./question/question";
+
 const Routes = () => {
     return (
         <Router>
@@ -45,8 +46,12 @@ const Routes = () => {
                 <Route path="/job-section">
                     <JobSection />
                 </Route>
+                <Route path="/faq">
+                    <Question />
+                </Route>
             </Switch>
         </Router>
     );
 }
+
 export default Routes;
