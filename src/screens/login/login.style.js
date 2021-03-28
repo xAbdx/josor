@@ -47,20 +47,30 @@ const useStyles = makeStyles((theme) => ({
         margin: "20px"
     },
     spaceForm: {
-        marginBottom: "15px"
+        marginBottom: "15px 0",
+    },
+    textFields: {
+        width: "100%",
+        margin: "20px auto",
+        display: "flex",
+        justifyContent: "space-around",
+        flexDirection: "column",
     },
     btnColor: {
         backgroundColor: "rgb(134,210,252)",
         background: "linear-gradient(90deg, rgba(134,210,252,1) 0%, rgba(245,184,255,1) 100%)",
-        fontSize: "20px",
-        fontWeight: "900"
+        fontSize: "25px",
+        fontWeight: "900",
     },
     titleColor: {
         // color: "#fff",
         fontSize: "40px",
         textAlign: "center",
         fontWeight: "900",
+    },
+    link: {
+        // width: "90%"
     }
 }));
 
-export default useStyles; 
+export default useStyles;
