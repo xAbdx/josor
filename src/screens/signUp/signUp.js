@@ -1,9 +1,11 @@
 import React from "react";
 import { TextField, Button } from "@material-ui/core";
-import useStyles from "./sign.style"
+import useStyles from "./sign.style";
 import { useHistory } from "react-router-dom";
-import Resume from "../../img/resume.svg"
+import Resume from "../../img/resume.svg";
+import clsx from 'clsx';
 import axios from 'axios';
+
 const SingUp = () => {
     const [data, setData] = React.useState({
         id:0,
@@ -18,23 +20,21 @@ const SingUp = () => {
         console.log(event);
         setData({ ...data, [event.target.name]: event.target.value })
     };
-    const test = async ()=>{
+    const insertUser = async () => {
         console.log('test');
         console.log(data);
         const user = {
             id: data.id,
-            name:data.username,
-            email:data.email,
-            password:data.password,
-            phone:data.phone,
-            'userType':1
-          };
-        const response =  await axios.post(
+            name: data.username,
+            email: data.email,
+            password: data.password
+        };
+        const response = await axios.post(
             'http://localhost/test/users.php',
             user,
             { headers: { 'Content-Type': 'application/json' } }
-          )
-          console.log(response.data)
+        )
+        console.log(response.data)
     };
     const classes = useStyles();
     const history = useHistory();
@@ -48,12 +48,14 @@ const SingUp = () => {
                     <div className={classes.colored}>
                         <div className={classes.test}>
                             <h1 className={classes.titleColor}>Sign Up</h1>
-                            <TextField id="outlined-basic" label="UserName" variant="outlined" value={data.username} name="username" onChange={handleChange} />
-                            <TextField id="outlined-basic" label="Email" variant="outlined" value={data.email} onChange={handleChange} name="email" onChange={handleChange} />
-                            <TextField id="outlined-basic" label="Password" variant="outlined" type="password" value={data.password} name="password" onChange={handleChange} />
-                            <TextField id="outlined-basic" label="confirm password" variant="outlined" type="password" value={data.confirmPassword} name="confirmPassword" onChange={handleChange} />
-                            <Button className={classes.submet, classes.Color} variant="contained" onClick={test}>SIGN UP</Button>
-                            <Button className={classes.submet} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("") }}> Have an account login</Button>
+                            <div className={classes.textFields}>
+                                <TextField required id="outlined-basic" label="UserName" variant="outlined" value={data.username} name="username" onChange={handleChange} />
+                                <TextField required id="outlined-basic" label="Email" variant="outlined" value={data.email} onChange={handleChange} name="email" onChange={handleChange} />
+                                <TextField required id="outlined-basic" label="Password" variant="outlined" type="password" value={data.password} name="password" onChange={handleChange} />
+                                <TextField required id="outlined-basic" label="confirm password" variant="outlined" type="password" value={data.confirmPassword} name="confirmPassword" onChange={handleChange} />
+                                <Button className={clsx(classes.submet, classes.btnColor)} variant="contained" onClick={insertUser}>SIGN UP</Button>
+                                <Button className={classes.submet} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("") }}> Have an account login</Button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -63,3 +65,4 @@ const SingUp = () => {
 }
 export default SingUp;
 
+export default SingUp;
