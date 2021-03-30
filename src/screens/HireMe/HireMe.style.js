@@ -36,21 +36,26 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#068842",
         width: "200px",
         padding: "18.5px 14px",
+        display: "flex",
+        margin: theme.spacing(1),
     },
     inputField1: {
         width: "30%",
         margin: "50px 50px 15px 50px"
+    },
+    inputField2: {
+        padding: "14px",
     },
     input: {
         display: 'none',
     },
     inputImage: {
         width: "80%",
-        margin:  "40px auto",
+        margin: "40px auto",
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
     }
 }))
 
-export default useStyles; 
+export default useStyles;
