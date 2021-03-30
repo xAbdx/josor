@@ -5,10 +5,41 @@ import Button from '@material-ui/core/Button';
 import clsx from 'clsx';
 import { useHistory } from "react-router-dom";
 import Resume from "../../img/resume.svg"
-
+import axios from 'axios';
 const Login = () => {
     const history = useHistory();
     const classes = useStyles();
+    const [data, setData] = React.useState({})
+    const handleChange = (event) => {
+        console.log(event.target.name);
+        console.log(event.target.value);
+        setData({ ...data, [event.target.name]: event.target.value })
+    };
+    const Login = async ()=>{
+        console.log(data);
+        console.log(data['UserName']);
+        if(data['UserName'] ===undefined || data['UserName'].length ===0){
+            alert('Username cannot be empty');
+            return ;
+        }
+        if( data['Password'] === undefined || data['Password'].length ===0){
+            alert('Password cannot be empty');
+            return ;
+        }
+        const response =  await axios.post(
+            'http://localhost/test/login.php',
+            data,
+            { headers: { 'Content-Type': 'application/json' } }
+          )
+          console.log(response.data['isValid'])
+          console.log(response.data['errorMessage'])
+          if(response.data['isValid']==true){
+            history.push("/home")
+          }
+          else{
+              alert(response.data['errorMessage']);
+          }
+    };
     return (
         <div className={classes.page}>
             <div className={classes.container2}>
@@ -18,10 +49,9 @@ const Login = () => {
                 <div className={classes.container}>
                     <div className={classes.colored}>
                         <h1 className={classes.titleColor}>Login</h1>
-                        <TextField className={classes.spaceForm} id="outlined-basic name" label="UserName" variant="outlined" />
-                        <TextField className={classes.spaceForm} id="outlined-basic pass" label="Password" variant="outlined" type="password" />
-                        <Button className={clsx(classes.spaceForm, classes.btnColor)} color="primary" variant="contained">Login</Button>
-
+                        <TextField className={classes.spaceForm} id="outlined-basic name" name="UserName" label="UserName" variant="outlined" onChange={handleChange} />
+                        <TextField className={classes.spaceForm} id="outlined-basic pass" name="Password" label="Password" variant="outlined" type="password" onChange={handleChange} />
+                        <Button className={clsx(classes.spaceForm, classes.btnColor)} color="primary" variant="contained" onClick={Login}>Login</Button>
                         <Button className={classes.spaceForm} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("/sign-up") }}>Don't Have an account?</Button>
                     </div>
                 </div>
@@ -29,5 +59,4 @@ const Login = () => {
         </div>
     );
 }
-
 export default Login;
