@@ -6,16 +6,17 @@ import Header from "../../components/header/header"
 import Footer from "../../components/footer/footer"
 import axios from 'axios';
 
-
 const Jobs = () => {
     const classes = useStyles();
     let { params } = useRouteMatch();
+    console.log(params);
     const [jobsBySection, setJobsBySection] = useState([])
     const GetJobsFromDB = async () => {
-        const response = await axios.get("http://localhost/api/jobs.php");
-        setJobsBySection(response.data);
-        console.log(response);
-        //delete me
+        // console.log("http://localhost/api/jobs.php?skill_id ${}");
+        const response = await axios.get("http://localhost/api/jobs.php?skill_id=" + params.id);
+        console.log(response.data);
+        if (response.data.length > 0)
+            setJobsBySection(response.data);
     }
     useEffect(() => {
         GetJobsFromDB();
