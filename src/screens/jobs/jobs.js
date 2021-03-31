@@ -5,17 +5,17 @@ import JobCard from "../jobCard/jobCard"
 import Header from "../../components/header/header"
 import Footer from "../../components/footer/footer"
 import axios from 'axios';
-
-
 const Jobs = () => {
     const classes = useStyles();
     let { params } = useRouteMatch();
+    console.log(params);
     const [jobsBySection, setJobsBySection] = useState([])
     const GetJobsFromDB = async () => {
-        const response = await axios.get("http://localhost/test/jobs.php");
+       // console.log("http://localhost:8081/josor/jobs.php?skill_id ${}");
+        const response = await axios.get("http://localhost/test/jobs.php?skill_id="+params.id);
+       console.log(response.data);
+        if(response.data.length>0)
         setJobsBySection(response.data);
-        console.log(response);
-        //delete me
     }
     useEffect(() => {
         GetJobsFromDB();
@@ -38,3 +38,4 @@ const Jobs = () => {
     );
 }
 export default Jobs;
+
