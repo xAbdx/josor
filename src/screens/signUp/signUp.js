@@ -65,4 +65,4 @@ const SingUp = () => {
 }
 export default SingUp;
 
-export default SingUp;
+
