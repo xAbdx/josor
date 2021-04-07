@@ -26,7 +26,7 @@ const Header = () => {
 
                     <li><NavLink exact to="/hire-me" activeClassName={classes.activeStyle} className={classes.link}>Be Service Provider</NavLink></li>
 
-                    <li><NavLink exact to="/" activeClassName={classes.activeStyle} className={classes.link}>Login</NavLink></li>
+                    <li><NavLink exact to="/" activeClassName={classes.activeStyle} className={classes.link}>Log out</NavLink></li>
                 </ul>
             </div>
         </div>
