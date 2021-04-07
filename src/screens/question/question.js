@@ -31,7 +31,7 @@ const Question = () => {
     const classes = useStyles();
     const [question, setQuestion] = useState([])
     const GetQuestionFromDB = async () => {
-        const response = await axios.get("http://localhost/api/faq.php");
+        const response = await axios.get("http://localhost/test/faq.php");
         setQuestion(response.data);
         console.log(response);
     }

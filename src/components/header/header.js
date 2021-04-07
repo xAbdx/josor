@@ -5,6 +5,11 @@ import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     const classes = useStyles();
+    const clearLogin = async () => {
+        localStorage.removeItem('/');
+       
+   
+    };
 
     return (
         <div className={classes.header}>
@@ -26,7 +31,7 @@ const Header = () => {
 
                     <li><NavLink exact to="/hireme" activeClassName={classes.activeStyle} className={classes.link}>Be Service Provider</NavLink></li>
 
-                    <li><NavLink exact to="/" activeClassName={classes.activeStyle} className={classes.link}>Login</NavLink></li>
+                    <li><NavLink exact to="/" activeClassName={classes.activeStyle} onClick={clearLogin} className={classes.link}>Logout</NavLink></li>
                 </ul>
             </div>
         </div>
