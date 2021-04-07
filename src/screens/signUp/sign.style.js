@@ -63,11 +63,14 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "900"
     },
     titleColor: {
-        // color: "#fff",
-        fontSize: "40px",
+        fontSize: "28px",
         textAlign: "center",
         fontWeight: "900",
-    }
+    },
+    inputField1: {
+        // width: "30%",
+        margin: "5px 0px"
+    },
 }));
 
 export default useStyles;

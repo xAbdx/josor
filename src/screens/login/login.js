@@ -2,7 +2,7 @@ import React from "react";
 import useStyles from './login.style';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import clsx from 'clsx';
+// import clsx from 'clsx';
 import { useHistory } from "react-router-dom";
 import Resume from "../../img/resume.svg"
 import axios from 'axios';
@@ -51,13 +51,15 @@ const Login = () => {
                     <div className={classes.colored}>
                         <h1 className={classes.titleColor}>Login</h1>
                         <div className={classes.textFields}>
-                            <TextField className={classes.spaceForm} id="outlined-basic name" name="UserName" label="User Name" variant="outlined" onChange={handleChange} />
-                            <TextField className={classes.spaceForm} id="outlined-basic pass" name="Password" label="Password" variant="outlined" type="password" onChange={handleChange} />
+                            <TextField className={classes.inputField} id="outlined-basic name" name="UserName" label="User Name" variant="outlined" onChange={handleChange} />
+
+                            <TextField className={classes.inputField} id="outlined-basic pass" name="Password" label="Password" variant="outlined" type="password" onChange={handleChange} />
+
                             <Button className={classes.btnColor} variant="contained" onClick={Login}>Login</Button>
 
-                            {/* className={clsx(classes.spaceForm classes.btnColor)} for 2 classes */}
+                            {/* className={clsx(classes.inputField classes.btnColor)} for 2 classes */}
 
-                            <Button className={clsx(classes.spaceForm, classes.link)} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("/sign-up") }}>Don't Have an account?</Button>
+                            <Button className={classes.inputField} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("/sign-up") }}>Don't Have an account?</Button>
                         </div>
                     </div>
                 </div>

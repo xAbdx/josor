@@ -46,8 +46,12 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: "#fff",
         margin: "20px"
     },
-    spaceForm: {
-        marginBottom: "15px 0",
+    // spaceForm: {
+    //     margin: "10px 0px",
+    // },
+    inputField: {
+        // width: "30%",
+        margin: "5px 0px"
     },
     textFields: {
         width: "100%",
@@ -63,14 +67,10 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "900",
     },
     titleColor: {
-        // color: "#fff",
         fontSize: "40px",
         textAlign: "center",
         fontWeight: "900",
     },
-    link: {
-        // width: "90%"
-    }
 }));
 
 export default useStyles;
