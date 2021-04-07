@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
     items: {
         display: "flex",
+        flexDirection: "column",
         justifyContent: "space-evenly",
         alignItems: "center",
         flexWrap: "wrap",
@@ -33,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         flexWrap: "wrap",
     },
     item2: {
-        margin: "30px auto",
+        margin: "0px 0px 30px 0px",
         display: "flex",
         justifyContent: "space-evenly",
         alignItems: "center",
@@ -54,8 +55,17 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
     },
     inputField1: {
-        width: "30%",
-        margin: "50px 50px 15px 50px"
+        width: "90%",
+        margin: "15px auto",
+        resize: "none",
+    },
+    inputFieldTextarea: {
+        width: "89%",
+        margin: "15px auto",
+        resize: "none",
+        border: "1px solid #ccc",
+        font: "inherit",
+        letterSpacing: "inherit",
     }
 }));
 

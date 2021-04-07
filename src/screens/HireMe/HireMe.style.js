@@ -39,12 +39,22 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         margin: theme.spacing(1),
     },
+    btnCancel: {
+        backgroundColor: "secondary",
+        width: "200px",
+        padding: "18.5px 14px",
+        display: "flex",
+        margin: theme.spacing(1),
+    },
     inputField1: {
         width: "30%",
         margin: "50px 50px 15px 50px"
     },
     inputField2: {
         padding: "14px",
+    },
+    selectField: {
+        width: "250px"
     },
     input: {
         display: 'none',

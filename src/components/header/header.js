@@ -31,7 +31,11 @@ const Header = () => {
 
                     <li><NavLink exact to="/hireme" activeClassName={classes.activeStyle} className={classes.link}>Be Service Provider</NavLink></li>
 
+<<<<<<< HEAD
                     <li><NavLink exact to="/" activeClassName={classes.activeStyle} onClick={clearLogin} className={classes.link}>Logout</NavLink></li>
+=======
+                    <li><NavLink exact to="/" activeClassName={classes.activeStyle} className={classes.link}>Log out</NavLink></li>
+>>>>>>> ebdc9e8cfa61c45725a8407318b23596906a54ac
                 </ul>
             </div>
         </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useStyles from './HireMe.style';
 import Header from '../../components/header/header';
 import Footer from "../../components/footer/footer";
@@ -6,14 +6,23 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import { MdAttachFile } from "react-icons/md";
 import axios from 'axios';
+import { MdDeleteForever } from "react-icons/md";
+import { useHistory } from "react-router-dom";
+// import InputLabel from '@material-ui/core/InputLabel';
+// import MenuItem from '@material-ui/core/MenuItem';
+// import FormControl from '@material-ui/core/FormControl';
+// import Select from '@material-ui/core/Select';
+import Select from 'react-select';
+import MenuItem from '@material-ui/core/MenuItem';
+
 
 const HireMe = () => {
     const [data, setData] = React.useState({
         id: "",
         serviceProviderUserId: "",
-        phone: "",
         location: "",
         kindOfDisability: "",
+        skill: ""
     })
     const handleChange = (event) => {
         setData({ ...data, [event.target.name]: event.target.value })
@@ -24,9 +33,9 @@ const HireMe = () => {
         const user = {
             id: data.id,
             serviceProviderUserId: data.serviceProviderUserId,
-            phone: data.phone,
             location: data.location,
-            kindOfDisability: data.kindOfDisability
+            kindOfDisability: data.kindOfDisability,
+            skill: data.skill,
         };
         const response = await axios.post(
             'http://localhost/api/user.php',
@@ -35,20 +44,23 @@ const HireMe = () => {
         )
         console.log(response.data)
     };
-    // const [phone, setPhone] = React.useState;
-    // const [errors, setErrors] = React.useState;
 
-    // const handleChange1 = (event) => {
-    //     const { target: { value } } = event;
-    //     setErrors({ phone: '' });
-    //     setPhone(value);
-    //     let reg = new RegExp(/^\d*S/).test(value)
-    //     if (!reg) {
-    //         setErrors({ phone: 'Only Numbers' })
-    //     }
-    // };
-
+    const [skill, setSkill] = useState([])
+    const GetSkillsFromDB = async () => {
+        const response = await axios.get("http://localhost/api/skills.php");
+        setSkill(response.data);
+        console.log(response);
+    }
+    useEffect(() => {
+        GetSkillsFromDB();
+    }, []);
+    const options = [
+        { value: data.skill, label: data.name },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' }
+    ]
     const classes = useStyles();
+    const history = useHistory();
 
     return (
         <div>
@@ -59,21 +71,35 @@ const HireMe = () => {
                 </div>
                 <div className={classes.card}>
                     <div className={classes.items}>
-                        <TextField className={classes.inputField1} required id="outlined-basic" label="Your Skills" variant="outlined" onChange={handleChange} />
+                        {/* <TextField className={classes.inputField1} required id="outlined-basic" label="Your Skills" variant="outlined" onChange={handleChange} /> */}
 
-                        <TextField
-                            className={classes.inputField1}
-                            required
-                            // value={phone}
-                            id="outlined-basic"
-                            label="Phone number"
-                            inputProps={{ maxLength: 5 }}
-                            // error={Boolean(errors?.phone)}
-                            // helperText={{ setErrors }}
-                            type="number"
-                            variant="outlined"
-                            onChange={handleChange}
-                        />
+                        {/* <FormControl variant="outlined" className={classes.inputField1}>
+                            <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                value={skill}
+                                onChange={handleChange}
+                                label="Skill"
+                            >
+                                <MenuItem value="">
+                                    <em>None</em>
+                                </MenuItem>
+                                <MenuItem value={10}>Ten</MenuItem>
+                                <MenuItem value={20}>Twenty</MenuItem>
+                                <MenuItem value={30}>Thirty</MenuItem>
+                            </Select>
+                        </FormControl> */}
+
+                        <Select
+                            className={classes.selectField}
+                            isMulti
+                            name="colors"
+                            options={options}
+                            classNamePrefix="select"
+                        >
+                            {/* <MenuItem value={20}>Twenty</MenuItem> */}
+                        </Select>
 
                         <TextField className={classes.inputField1} required id="outlined-basic" label="Location" variant="outlined" onChange={handleChange} />
 
@@ -115,6 +141,14 @@ const HireMe = () => {
                             variant="contained"
                             onClick={ServiceProviderInfo}>
                             Submit
+                        </Button>
+                        <Button
+                            className={classes.btnCancel}
+                            variant="contained"
+                            color="secondary"
+                            onClick={() => history.push("/home")}
+                            startIcon={<MdDeleteForever />}>
+                            Cancel
                         </Button>
                     </div>
                 </div>

@@ -19,16 +19,20 @@ import  { Redirect } from 'react-router-dom';
 
 const Home = () => {
     const classes = style();
-    const history = useHistory()
+    const history = useHistory();
+
     const goTo = (id) => {
         history.push(`/jobs/${id}`)
     }
+
     const [sections, setSections] = useState([])
+
     const GetCategoryFromDB = async () => {
         const response = await axios.get("http://localhost/test/skills1.php?job_id=");
         setSections(response.data);
         console.log(response);
     }
+
     useEffect(() => {
         GetCategoryFromDB();
     }, []);

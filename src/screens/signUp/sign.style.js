@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center"
     },
     container1: {
-        height: "90%",
+        height: "95%",
         width: "30%",
         margin: "auto",
         display: "flex",
@@ -28,8 +28,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
     },
     container: {
-        height: "80%",
         width: "70%",
+        height: "90%",
         margin: "auto",
         display: "flex",
         flexDirection: "column",
@@ -63,11 +63,14 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "900"
     },
     titleColor: {
-        // color: "#fff",
-        fontSize: "40px",
+        fontSize: "28px",
         textAlign: "center",
         fontWeight: "900",
-    }
+    },
+    inputField1: {
+        // width: "30%",
+        margin: "5px 0px"
+    },
 }));
 
 export default useStyles;
