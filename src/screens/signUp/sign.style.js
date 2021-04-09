@@ -51,7 +51,7 @@ const useStyles = makeStyles((theme) => ({
     },
     textFields: {
         width: "100%",
-        margin: "20px auto",
+        // margin: "20px auto",
         display: "flex",
         justifyContent: "space-around",
         flexDirection: "column",

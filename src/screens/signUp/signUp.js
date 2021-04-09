@@ -8,13 +8,13 @@ import axios from 'axios';
 
 const SingUp = () => {
     const [data, setData] = React.useState({
-        id:"",
+        id: "",
         username: "",
         email: "",
         password: "",
         confirmPassword: "",
-    
-       
+
+
     })
     const handleChange = (event) => {
         console.log(event);
@@ -28,11 +28,11 @@ const SingUp = () => {
             name: data.username,
             email: data.email,
             password: data.password,
-            phone:13444,
-            userTypeid:1
+            phone: 13444,
+            userTypeid: 1
         };
         const response = await axios.post(
-            'http://localhost/test/Users.php',
+            'http://localhost/api/Users.php',
             user,
             { headers: { 'Content-Type': 'application/json' } }
         )
@@ -51,14 +51,6 @@ const SingUp = () => {
                         <div className={classes.test}>
                             <h1 className={classes.titleColor}>Sign Up</h1>
                             <div className={classes.textFields}>
-<<<<<<< HEAD
-                                <TextField required id="outlined-basic" label="UserName" variant="outlined" value={data.username} name="username" onChange={handleChange} />
-                                <TextField required id="outlined-basic" label="Email" variant="outlined" value={data.email} onChange={handleChange} name="email" onChange={handleChange} />
-                                <TextField required id="outlined-basic" label="Password" variant="outlined" type="password" value={data.password} name="password" onChange={handleChange} />
-                                <TextField required id="outlined-basic" label="confirm password" variant="outlined" type="password" value={data.confirmPassword} name="confirmPassword" onChange={handleChange} />
-                                <Button className={clsx(classes.submet, classes.btnColor)} variant="contained" onClick={insertUser}>SIGN UP</Button>
-                                <Button className={classes.submet} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("/") }}> Have an account login</Button>
-=======
                                 <TextField className={classes.inputField1} required id="outlined-basic" label="UserName" variant="outlined" value={data.username} name="username" onChange={handleChange} />
 
                                 <TextField className={classes.inputField1} required id="outlined-basic" label="Email" variant="outlined" value={data.email} onChange={handleChange} name="email" onChange={handleChange} type="email" />
@@ -84,7 +76,6 @@ const SingUp = () => {
                                 <Button className={classes.inputField1} className={clsx(classes.submet, classes.btnColor)} variant="contained" onClick={insertUser}>SIGN UP</Button>
 
                                 <Button className={classes.inputField1} className={classes.submet} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("") }}> Have an account login</Button>
->>>>>>> ebdc9e8cfa61c45725a8407318b23596906a54ac
                             </div>
                         </div>
                     </div>

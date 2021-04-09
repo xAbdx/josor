@@ -15,30 +15,30 @@ const Login = () => {
         console.log(event.target.value);
         setData({ ...data, [event.target.name]: event.target.value })
     };
-    const Login = async ()=>{
+    const Login = async () => {
         console.log(data);
         console.log(data['UserName']);
-        if(data['UserName'] ===undefined || data['UserName'].length ===0){
+        if (data['UserName'] === undefined || data['UserName'].length === 0) {
             alert('Username cannot be empty');
-            return ;
+            return;
         }
-        if( data['Password'] === undefined || data['Password'].length ===0){
+        if (data['Password'] === undefined || data['Password'].length === 0) {
             alert('Password cannot be empty');
-            return ;
+            return;
         }
-        const response =  await axios.post(
-            'http://localhost/test/login.php',
+        const response = await axios.post(
+            'http://localhost/api/login.php',
             data,
             { headers: { 'Content-Type': 'application/json' } }
-          )
-          console.log(response.data['isValid'])
-          console.log(response.data['errorMessage'])
-          if(response.data['isValid']==true){
+        )
+        console.log(response.data['isValid'])
+        console.log(response.data['errorMessage'])
+        if (response.data['isValid'] == true) {
             history.push("/home")
-          }
-          else{
-              alert(response.data['errorMessage']);
-          }
+        }
+        else {
+            alert(response.data['errorMessage']);
+        }
     };
     return (
         <div className={classes.page}>
@@ -49,24 +49,17 @@ const Login = () => {
                 <div className={classes.container}>
                     <div className={classes.colored}>
                         <h1 className={classes.titleColor}>Login</h1>
-<<<<<<< HEAD
-                        <TextField className={classes.spaceForm} id="outlined-basic name" name="UserName" label="UserName" variant="outlined" onChange={handleChange} />
-                        <TextField className={classes.spaceForm} id="outlined-basic pass" name="Password" label="Password" variant="outlined" type="password" onChange={handleChange} />
-                        <Button className={clsx(classes.spaceForm, classes.btnColor)} color="primary" variant="contained" onClick={Login}>Login</Button>
-                        <Button className={classes.spaceForm} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("/sign-up") }}>Don't Have an account?</Button>
-=======
                         <div className={classes.textFields}>
-                            <TextField className={classes.inputField} id="outlined-basic name" name="UserName" label="User Name" variant="outlined" onChange={handleChange} />
+                            <TextField className={classes.inputField1} id="outlined-basic name" name="UserName" label="User Name" variant="outlined" onChange={handleChange} />
 
-                            <TextField className={classes.inputField} id="outlined-basic pass" name="Password" label="Password" variant="outlined" type="password" onChange={handleChange} />
+                            <TextField className={classes.inputField1} id="outlined-basic pass" name="Password" label="Password" variant="outlined" type="password" onChange={handleChange} />
 
                             <Button className={classes.btnColor} variant="contained" onClick={Login}>Login</Button>
 
                             {/* className={clsx(classes.inputField classes.btnColor)} for 2 classes */}
 
-                            <Button className={classes.inputField} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("/sign-up") }}>Don't Have an account?</Button>
+                            <Button className={classes.inputField1} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("/sign-up") }}>Don't Have an account?</Button>
                         </div>
->>>>>>> ebdc9e8cfa61c45725a8407318b23596906a54ac
                     </div>
                 </div>
             </div>

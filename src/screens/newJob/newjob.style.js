@@ -60,10 +60,12 @@ const useStyles = makeStyles((theme) => ({
         resize: "none",
     },
     inputFieldTextarea: {
-        width: "89%",
+        width: "85%",
+        padding: "10px 14px",
         margin: "15px auto",
         resize: "none",
         border: "1px solid #ccc",
+        borderRadius: "4px",
         font: "inherit",
         letterSpacing: "inherit",
     }

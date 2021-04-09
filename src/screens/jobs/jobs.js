@@ -11,11 +11,11 @@ const Jobs = () => {
     console.log(params);
     const [jobsBySection, setJobsBySection] = useState([])
     const GetJobsFromDB = async () => {
-       // console.log("http://localhost:8081/josor/jobs.php?skill_id ${}");
-        const response = await axios.get("http://localhost/test/jobs.php?skill_id="+params.id);
-       console.log(response.data);
-        if(response.data.length>0)
-        setJobsBySection(response.data);
+        // console.log("http://localhost:8081/josor/jobs.php?skill_id ${}");
+        const response = await axios.get("http://localhost/api/jobs.php?skill_id=" + params.id);
+        console.log(response.data);
+        if (response.data.length > 0)
+            setJobsBySection(response.data);
     }
     useEffect(() => {
         GetJobsFromDB();

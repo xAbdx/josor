@@ -6,7 +6,7 @@ import Header from "../../components/header/header";
 import Footer from "../../components/footer/footer";
 import NewService from "../../components/newService/newService";
 import axios from 'axios';
-import  { Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 
 
 
@@ -28,7 +28,7 @@ const Home = () => {
     const [sections, setSections] = useState([])
 
     const GetCategoryFromDB = async () => {
-        const response = await axios.get("http://localhost/test/skills1.php?job_id=");
+        const response = await axios.get("http://localhost/api/skills.php?job_id=");
         setSections(response.data);
         console.log(response);
     }
@@ -36,9 +36,9 @@ const Home = () => {
     useEffect(() => {
         GetCategoryFromDB();
     }, []);
-    if (localStorage.getItem('isAuthorized')===false ||localStorage.getItem('isAuthorized')===true )
-    return <Redirect to='/'  />
-    
+    if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === true)
+        return <Redirect to='/' />
+
     const clearLogin = async () => {
         localStorage.removeItem('isAuthorized');
     };

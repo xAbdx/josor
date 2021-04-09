@@ -49,9 +49,9 @@ const useStyles = makeStyles((theme) => ({
     // spaceForm: {
     //     margin: "10px 0px",
     // },
-    inputField: {
+    inputField1: {
         // width: "30%",
-        margin: "5px 0px"
+        margin: "5px auto"
     },
     textFields: {
         width: "100%",
@@ -65,6 +65,7 @@ const useStyles = makeStyles((theme) => ({
         background: "linear-gradient(90deg, rgba(134,210,252,1) 0%, rgba(245,184,255,1) 100%)",
         fontSize: "25px",
         fontWeight: "900",
+        margin: "5px auto"
     },
     titleColor: {
         fontSize: "40px",
