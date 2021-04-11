@@ -13,7 +13,6 @@ import { useHistory } from "react-router-dom";
 // import FormControl from '@material-ui/core/FormControl';
 // import Select from '@material-ui/core/Select';
 import Select from 'react-select';
-import MenuItem from '@material-ui/core/MenuItem';
 
 
 const HireMe = () => {
@@ -62,6 +61,29 @@ const HireMe = () => {
     const classes = useStyles();
     const history = useHistory();
 
+    const [image, setImage] = React.useState("");
+    const imageRef = React.useRef(null);
+
+    function useDisplayImage() {
+        const [result, setResult] = React.useState("");
+
+        function uploader(e) {
+            const imageFile = e.target.files[0];
+
+            const reader = new FileReader();
+            reader.addEventListener("load", (e) => {
+                setResult(e.target.result);
+            });
+
+            reader.readAsDataURL(imageFile);
+        }
+
+        return { result, uploader };
+    }
+
+    const { result, uploader } = useDisplayImage();
+
+
     return (
         <div>
             <Header />
@@ -71,25 +93,9 @@ const HireMe = () => {
                 </div>
                 <div className={classes.card}>
                     <div className={classes.items}>
-                        {/* <TextField className={classes.inputField1} required id="outlined-basic" label="Your Skills" variant="outlined" onChange={handleChange} /> */}
+                        <TextField className={classes.inputField1} required id="outlined-basic" label="Location" variant="outlined" onChange={handleChange} />
 
-                        {/* <FormControl variant="outlined" className={classes.inputField1}>
-                            <InputLabel id="demo-simple-select-outlined-label">Age</InputLabel>
-                            <Select
-                                labelId="demo-simple-select-outlined-label"
-                                id="demo-simple-select-outlined"
-                                value={skill}
-                                onChange={handleChange}
-                                label="Skill"
-                            >
-                                <MenuItem value="">
-                                    <em>None</em>
-                                </MenuItem>
-                                <MenuItem value={10}>Ten</MenuItem>
-                                <MenuItem value={20}>Twenty</MenuItem>
-                                <MenuItem value={30}>Thirty</MenuItem>
-                            </Select>
-                        </FormControl> */}
+                        <TextField className={classes.inputField1} required id="outlined-basic" label="kind of disability" variant="outlined" onChange={handleChange} />
 
                         <Select
                             className={classes.selectField}
@@ -100,10 +106,6 @@ const HireMe = () => {
                         >
                             {/* <MenuItem value={20}>Twenty</MenuItem> */}
                         </Select>
-
-                        <TextField className={classes.inputField1} required id="outlined-basic" label="Location" variant="outlined" onChange={handleChange} />
-
-                        <TextField className={classes.inputField1} required id="outlined-basic" label="kind of disability" variant="outlined" onChange={handleChange} />
 
                         <div className={classes.inputImage}>
                             <label htmlFor="contained-button-file">
@@ -119,7 +121,10 @@ const HireMe = () => {
                                 />
                             </label>
                             <label htmlFor="contained-button-file">
-                                <Button className={classes.inputField2} variant="contained" color="primary" component="span" endIcon={<MdAttachFile />}>
+                                <Button className={classes.inputField2} variant="contained" color="primary" component="span" endIcon={<MdAttachFile />} onChange={(e) => {
+                                    setImage(e.target.files[0]);
+                                    uploader(e);
+                                }}>
                                     Your supporting documents
                                 </Button>
                                 <input
@@ -130,6 +135,18 @@ const HireMe = () => {
                                     type="file"
                                 />
                             </label>
+                            <div className={classes.imageDifv}>
+                                <input
+                                    accept="image/*"
+                                    multiple
+                                    type="file"
+                                    onChange={(e) => {
+                                        setImage(e.target.files[0]);
+                                        uploader(e);
+                                    }}
+                                />
+                                {result && <img className={classes.imageDifv} ref={imageRef} src={result} alt="" />}
+                            </div>
                         </div>
                     </div>
                     <div className={classes.item}>

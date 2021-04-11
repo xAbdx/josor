@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "400"
     },
     card: {
-        minHeight: "500px",
+        // minHeight: "500px",
         width: "70%",
         boxShadow: "2px 4px 15px rgba(0, 0, 0, 0.17)",
         margin: "auto",
@@ -21,12 +21,15 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
     },
     items: {
+        margin: "30px 0px 0px 0px",
         display: "flex",
+        flexDirection: "column",
         justifyContent: "space-evenly",
         alignItems: "center",
-        flexWrap: "wrap",
+        // flexWrap: "wrap",
     },
     item: {
+        margin: "0px 0px 30px 0px",
         margin: "30px",
         display: "flex",
         justifyContent: "center",
@@ -47,24 +50,30 @@ const useStyles = makeStyles((theme) => ({
         margin: theme.spacing(1),
     },
     inputField1: {
-        width: "30%",
-        margin: "50px 50px 15px 50px"
+        // width: "30%",
+        // margin: "50px 50px 15px 50px"
+        width: "90%",
+        margin: "15px auto",
     },
     inputField2: {
-        padding: "14px",
+        // padding: "14px",
+        width: "100%",
+        margin: "15px auto",
     },
     selectField: {
-        width: "250px"
+        // width: "250px"
+        // padding: "14px",
+        width: "90%",
+        margin: "15px auto",
     },
     input: {
         display: 'none',
     },
     inputImage: {
-        width: "80%",
-        margin: "40px auto",
-        display: "flex",
-        justifyContent: "space-evenly",
-        alignItems: "center",
+        width: "90%",
+    },
+    imageDifv: {
+        maxWidth: "500px",
     }
 }))
 
