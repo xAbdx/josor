@@ -39,9 +39,6 @@ const Home = () => {
     if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === true)
         return <Redirect to='/' />
 
-    const clearLogin = async () => {
-        localStorage.removeItem('isAuthorized');
-    };
     return (
         <div>
             <Header />
