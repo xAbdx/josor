@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "15px auto",
     },
     input: {
-        display: 'none',
+        // display: 'none',
     },
     inputImage: {
         width: "90%",

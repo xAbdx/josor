@@ -14,6 +14,8 @@ import HireMe from './HireMe/HireMe';
 import NewJob from './newJob/newJob';
 import JobSection from "./jobPost/jobPost";
 import Question from "./question/question";
+import LoginDashboard from "./loginDashboard/loginDashboard";
+import HeaderDashboard from "../components/headerDashboard/headerDashboard";
 
 const Routes = () => {
     return (
@@ -32,7 +34,7 @@ const Routes = () => {
                     <p>about</p>
                 </Route>
                 <Route path="/dashboard">
-                    <p>dashboard</p>
+                    <LoginDashboard />
                 </Route>
                 <Route path="/home">
                     <Home />
@@ -48,6 +50,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/faq">
                     <Question />
+                </Route>
+                <Route path="/header">
+                    <HeaderDashboard />
                 </Route>
             </Switch>
         </Router>

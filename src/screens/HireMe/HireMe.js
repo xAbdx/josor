@@ -108,36 +108,28 @@ const HireMe = () => {
                         </Select>
 
                         <div className={classes.inputImage}>
-                            <label htmlFor="contained-button-file">
-                                <Button className={classes.inputField2} variant="contained" color="primary" component="span" endIcon={<MdAttachFile />}>
+                            <div className={classes.firstImage}>
+                                <label htmlFor="contained-button-file">
                                     Your ID
-                                </Button>
-                                <input
+                                {/* <Button className={classes.inputField2} variant="contained" color="primary" component="span" endIcon={<MdAttachFile />}>
+                                    Your ID
+                                </Button> */}
+                                    {/* <input
                                     accept="image/*"
                                     className={classes.input}
                                     id="contained-button-file"
                                     multiple
                                     type="file"
-                                />
-                            </label>
-                            <label htmlFor="contained-button-file">
-                                <Button className={classes.inputField2} variant="contained" color="primary" component="span" endIcon={<MdAttachFile />} onChange={(e) => {
-                                    setImage(e.target.files[0]);
-                                    uploader(e);
-                                }}>
-                                    Your supporting documents
-                                </Button>
+                                    onChange={(e) => {
+                                        setImage(e.target.files[0]);
+                                        uploader(e);
+                                    }}
+                                /> */}
+                                </label>
                                 <input
                                     accept="image/*"
                                     className={classes.input}
                                     id="contained-button-file"
-                                    multiple
-                                    type="file"
-                                />
-                            </label>
-                            <div className={classes.imageDifv}>
-                                <input
-                                    accept="image/*"
                                     multiple
                                     type="file"
                                     onChange={(e) => {
@@ -147,6 +139,50 @@ const HireMe = () => {
                                 />
                                 {result && <img className={classes.imageDifv} ref={imageRef} src={result} alt="" />}
                             </div>
+                            <div className={classes.secondImage}>
+                                <label htmlFor="contained-button-file">
+                                    Your supporting documents
+                                {/* <Button className={classes.inputField2} variant="contained" color="primary" component="span" endIcon={<MdAttachFile />} >
+                                    Your supporting documents
+                                </Button> */}
+                                    {/* <input
+                                    accept="image/*"
+                                    className={classes.input}
+                                    id="contained-button-file"
+                                    multiple
+                                    type="file"
+                                    onChange={(e) => {
+                                        setImage(e.target.files[0]);
+                                        uploader(e);
+                                    }}
+                                /> */}
+                                </label>
+                                <input
+                                    accept="image/*"
+                                    className={classes.input}
+                                    id="contained-button-file"
+                                    multiple
+                                    type="file"
+                                    onChange={(e) => {
+                                        setImage(e.target.files[0]);
+                                        uploader(e);
+                                    }}
+                                />
+                                {result && <img className={classes.imageDifv} ref={imageRef} src={result} alt="" />}
+                            </div>
+
+                            {/* <div className={classes.imageDifv}>
+                                <input
+                                    accept="image/*"
+                                    // multiple
+                                    type="file"
+                                    onChange={(e) => {
+                                        setImage(e.target.files[0]);
+                                        uploader(e);
+                                    }}
+                                />
+                                {result && <img className={classes.imageDifv} ref={imageRef} src={result} alt="" />}
+                            </div> */}
                         </div>
                     </div>
                     <div className={classes.item}>
