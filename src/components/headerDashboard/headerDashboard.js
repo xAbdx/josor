@@ -16,7 +16,7 @@ const HeaderDashboard = () => {
         <div className={classes.root}>
             <div className={classes.header}>
                 <h1 className={classes.title}>Admin Dashboard</h1>
-                <NavLink className={classes.link} exact to="/" onClick={clearLogin} className={classes.link}>Log out</NavLink>
+                <NavLink className={classes.link} exact to="/logind" onClick={clearLogin} className={classes.link}>Log out</NavLink>
             </div>
         </div>
     )
