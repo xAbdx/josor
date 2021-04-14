@@ -6,10 +6,17 @@ import { NavLink } from 'react-router-dom';
 const Header = () => {
     const classes = useStyles();
     const clearLogin = async () => {
-        localStorage.removeItem('/');
-
+        localStorage.removeItem('isAuthorized');
 
     };
+
+    const renderAuthButton = () => {
+        if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null) {
+            return <li><NavLink exact to="/" activeClassName={classes.activeStyle} className={classes.link}>login</NavLink></li>;
+        } else {
+            return <li><NavLink exact to="/" activeClassName={classes.activeStyle} onClick={clearLogin} className={classes.link}>logout</NavLink></li>;
+        }
+    }
 
     return (
         <div className={classes.header}>
@@ -31,7 +38,9 @@ const Header = () => {
 
                     <li><NavLink exact to="/hireme" activeClassName={classes.activeStyle} className={classes.link}>Be Service Provider</NavLink></li>
 
-                    <li><NavLink exact to="/" activeClassName={classes.activeStyle} onClick={clearLogin} className={classes.link}>Logout</NavLink></li>
+                    {renderAuthButton()}
+
+
                 </ul>
             </div>
         </div>

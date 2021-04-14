@@ -35,9 +35,11 @@ const Login = () => {
         console.log(response.data['errorMessage'])
         if (response.data['isValid'] == true) {
             history.push("/home")
+            localStorage.setItem('isAuthorized', true);
         }
         else {
             alert(response.data['errorMessage']);
+            localStorage.setItem('isAuthorized', false);
         }
     };
     return (
