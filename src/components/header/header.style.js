@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
         color: "#068842"
     },
     header: {
-        // height: "25vh",
+        height: "10vh",
         width: "100%",
         display: "flex",
         justifyContent: "space-between",
