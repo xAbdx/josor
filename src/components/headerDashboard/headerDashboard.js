@@ -1,16 +1,23 @@
 import React from 'react'
 import useStyles from './headerDashboard.style'
 import { Redirect } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-export const HeaderDashboard = () => {
+const HeaderDashboard = () => {
     const classes = useStyles();
+    const clearLogin = async () => {
+        localStorage.removeItem('isAuthorized');
 
-    if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
-        return <Redirect to='/' />
+    };
+    // if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
+    //     return <Redirect to='/' />
 
     return (
         <div className={classes.root}>
-            hi
+            <div className={classes.header}>
+                <h1 className={classes.title}>Admin Dashboard</h1>
+                <NavLink className={classes.link} exact to="/" onClick={clearLogin} className={classes.link}>Log out</NavLink>
+            </div>
         </div>
     )
 }

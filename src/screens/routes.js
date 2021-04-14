@@ -14,8 +14,11 @@ import HireMe from './HireMe/HireMe';
 import NewJob from './newJob/newJob';
 import JobSection from "./jobPost/jobPost";
 import Question from "./question/question";
-import LoginDashboard from "./loginDashboard/loginDashboard";
-import HeaderDashboard from "../components/headerDashboard/headerDashboard";
+import LoginDashboard from "./AdminPanel/loginDashboard/loginDashboard";
+import Dashboard from "./AdminPanel/Dashboard/Dashboard";
+import ApproveServiceProvider from "./AdminPanel/ApproveServiceProvider/ApproveServiceProvider";
+import CrudCategories from "./AdminPanel/CrudCategories/CrudCategories";
+import CrudMessages from "./AdminPanel/CrudMessages/CrudMessages";
 
 const Routes = () => {
     return (
@@ -29,12 +32,6 @@ const Routes = () => {
                 </Route>
                 <Route exact path="/jobs/:id">
                     <Jobs />
-                </Route>
-                <Route path="/about">
-                    <p>about</p>
-                </Route>
-                <Route path="/dashboard">
-                    <LoginDashboard />
                 </Route>
                 <Route path="/home">
                     <Home />
@@ -51,8 +48,20 @@ const Routes = () => {
                 <Route path="/faq">
                     <Question />
                 </Route>
-                <Route path="/header">
-                    <HeaderDashboard />
+                <Route path="/dashboard">
+                    <Dashboard />
+                </Route>
+                <Route path="/logind">
+                    <LoginDashboard />
+                </Route>
+                <Route path="/approve">
+                    <ApproveServiceProvider />
+                </Route>
+                <Route path="/crud-categories">
+                    <CrudCategories />
+                </Route>
+                <Route path="/crud-messages">
+                    <CrudMessages />
                 </Route>
             </Switch>
         </Router>
