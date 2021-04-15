@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
     },
     activeStyle: {
         color: "#A338B6",
-        fontSize: "22px"
     },
     list: {
         listStyle: "none",
