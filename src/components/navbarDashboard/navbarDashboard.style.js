@@ -11,6 +11,7 @@ const useStyles = makeStyles((theme) => ({
     },
     activeStyle: {
         color: "#A338B6",
+        fontSize: "22px"
     },
     list: {
         listStyle: "none",
@@ -22,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
     link: {
         margin: "10px 0",
         textDecoration: "none",
-        color: "#000",
         fontWeight: "500",
         fontSize: "18px",
         lineHeight: "21px",

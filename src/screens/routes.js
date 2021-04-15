@@ -19,6 +19,7 @@ import Dashboard from "./AdminPanel/Dashboard/Dashboard";
 import ApproveServiceProvider from "./AdminPanel/ApproveServiceProvider/ApproveServiceProvider";
 import CrudCategories from "./AdminPanel/CrudCategories/CrudCategories";
 import CrudMessages from "./AdminPanel/CrudMessages/CrudMessages";
+import ShowUsers from "./AdminPanel/ShowUsers/ShowUsers";
 
 const Routes = () => {
     return (
@@ -62,6 +63,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/crud-messages">
                     <CrudMessages />
+                </Route>
+                <Route path="/show-users">
+                    <ShowUsers />
                 </Route>
             </Switch>
         </Router>

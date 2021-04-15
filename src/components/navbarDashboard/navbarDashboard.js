@@ -41,6 +41,17 @@ const NavbarDashboard = () => {
                             Contact us messages
                         </NavLink>
                     </li>
+
+                    <li className={classes.item}>
+                        <NavLink
+                            exact
+                            to="/show-users"
+                            activeClassName={classes.activeStyle}
+                            className={classes.link}
+                        >
+                            Show users
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </div>
