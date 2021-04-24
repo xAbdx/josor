@@ -12,24 +12,17 @@ const useStyles = makeStyles((theme) => ({
     },
     logo: {
         color: "#068842",
-        // fontWeight: "bold",
-        // fontSize: "36px",
     },
     itemWidth: {
         marginBottom: "10px",
     },
-    // itemWidthTextarea: {
-    //     width: "82.5%",
-    //     backgroundColor: "#d5d5d5",
-    //     border: "none",
-    //     padding: "20px 12px 15px 12px",
-    //     font: "inherit",
-    //     resize: "none",
-    //     overflowY: "scroll"
-    // },
     btn: {
         backgroundColor: "#068842",
+        margin: "10px 0 10px 0"
+    },
+    heart: {
+        color: "red"
     }
 }));
 
-export default useStyles; 
+export default useStyles;

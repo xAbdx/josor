@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+.message {
+  margin: 0 0 5px 0;
+  font-size: 17px; 
+}
+
+.success {
+  color: blue;
+}
+
+.error {
+  color: red;
+}

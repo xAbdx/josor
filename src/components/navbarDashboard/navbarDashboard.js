@@ -23,22 +23,22 @@ const NavbarDashboard = () => {
                     <li className={classes.item}>
                         <NavLink
                             exact
-                            to="/crud-categories"
+                            to="/crud-messages"
                             activeClassName={classes.activeStyle}
                             className={classes.link}
                         >
-                            Categories
+                            Contact us
                         </NavLink>
                     </li>
 
                     <li className={classes.item}>
                         <NavLink
                             exact
-                            to="/crud-messages"
+                            to="/crud-categories"
                             activeClassName={classes.activeStyle}
                             className={classes.link}
                         >
-                            Contact us messages
+                            Categories
                         </NavLink>
                     </li>
 
