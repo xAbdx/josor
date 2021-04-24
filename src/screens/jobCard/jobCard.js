@@ -14,7 +14,10 @@ const JobCard = (props) => {
     const { job } = props;
 
     const handleClick = () => {
+        // console.log(test);
         history.push(`/job-section`);
+        // history.push(`/job-section/${job.id}`);
+
     }
 
     return (
@@ -22,7 +25,7 @@ const JobCard = (props) => {
             {/* <p key={`job_posts${job.id}`}></p> */}
             <div className={classes.root}>
                 <Card className={classes.card}>
-                    <div className={classes.leftColumn} onClick={handleClick}>
+                    <div className={classes.leftColumn} onClick={handleClick()}>
                         <div>
                             <CardMedia
                                 className={classes.media}

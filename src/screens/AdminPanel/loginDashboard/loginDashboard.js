@@ -4,6 +4,9 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import { GrUserAdmin } from "react-icons/gr";
+import { RiAdminLine } from "react-icons/ri";
+
 
 export const LoginDashboard = () => {
     const classes = useStyles();
@@ -47,33 +50,29 @@ export const LoginDashboard = () => {
     return (
         <div className={classes.root}>
             <div className={classes.card}>
-                <div className={classes.loginCard}>
-                    <h1 className={classes.title}>JOSOR</h1>
-                    <div className={classes.loginCardSection}>
-                        <div className={classes.marginTest}>
-                            <TextField
-                                className={classes.inputField}
-                                required
-                                id="outlined-basic"
-                                label="User name"
-                                variant="outlined"
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={classes.marginTest}>
-                            <TextField
-                                className={classes.inputField}
-                                required
-                                id="outlined-basic"
-                                label="Password"
-                                variant="outlined"
-                                type="password"
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={classes.marginTest}>
-                            <Button variant="contained" onClick={Login}>LOG IN</Button>
-                        </div>
+                <h1 className={classes.title}>Login <RiAdminLine /></h1>
+                <div className={classes.loginCardSection}>
+                    <div className={classes.marginField}>
+                        <TextField
+                            required
+                            id="outlined-basic"
+                            label="User name"
+                            variant="outlined"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className={classes.marginField}>
+                        <TextField
+                            required
+                            id="outlined-basic"
+                            label="Password"
+                            variant="outlined"
+                            type="password"
+                            onChange={handleChange}
+                        />
+                    </div>
+                    <div className={classes.marginField}>
+                        <Button variant="contained" onClick={Login}>LOG IN</Button>
                     </div>
                 </div>
             </div>
