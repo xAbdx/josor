@@ -38,21 +38,23 @@ const Home = () => {
         return <Redirect to='/' />
 
     return (
-        <div>
+        <div className={classes.root}>
             <Header />
             <div className={classes.imageConteainer}>
                 <div className={classes.image}>
                     <div className={classes.text}>
                         <h1 className={classes.title}>H.O.P.E</h1>
                         <div className={classes.description}>
-                            <p className={classes.description}>HOLD ON,</p>
-                            <p className={classes.description}>PAIN ENDS</p>
+                            <p className={classes.description}>hold on,</p>
+                            <p className={classes.description}>pain ends</p>
                         </div>
                     </div>
 
                 </div>
             </div>
             <NewService />
+            <hr className={classes.line} />
+            <h1 className={classes.titleSectionTwo}>Categories</h1>
             <div className={classes.page}>
                 {sections.map((item, index) => {
                     return (

@@ -2,6 +2,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import bg from "../../img/bg.jpg"
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: "#F5F5F5",
+  },
   page: {
     display: "flex",
     flexWrap: "wrap",
@@ -43,7 +46,18 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "50px",
     margin: "0",
     letterSpacing: "5px",
-  }
+    textTransform: "uppercase",
+  },
+  line: {
+    margin: "40px auto",
+    width: "90%",
+  },
+  titleSectionTwo: {
+    display: "flex",
+    justifyContent: "center",
+    color: "#3a3a3a",
+    fontSize: "3em",
+  },
 }));
 
 export default useStyles;
