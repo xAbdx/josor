@@ -46,27 +46,26 @@ const CrudCategories = () => {
         console.log(response.data)
     };
 
-    const removeCategory = async (category,id) => {
+    const removeCategory = async (category, id) => {
         console.log(category.target.value);
         console.log(id);
-      
-      const res = await axios.delete('http://localhost/api/delete.php', 
-      { data: { categoryid: id } },
-      { headers: { 'Content-Type': 'application/json' }} );
 
-      
+        const res = await axios.delete('http://localhost/api/skills.php',
+            { data: { categoryid: id } },
+            { headers: { 'Content-Type': 'application/json' } });
+
+
         // await axios.delete(
         //     'http://localhost/api/skills.php',
         //     { headers: { 'Content-Type': 'application/json' } }
         // )
-        console.log( res);
-       if(res.data.isValid){
-           alert('deleted successfully ');
-       }
-       else
-       {
-           alert(res.data.errorMessage);
-       }
+        console.log(res);
+        if (res.data.isValid) {
+            alert('deleted successfully ');
+        }
+        else {
+            alert(res.data.errorMessage);
+        }
     };
 
 
@@ -93,8 +92,8 @@ const CrudCategories = () => {
                                         <ListItem>
                                             <ListItemText primary={category.name} />
                                             <Button onClick={(e) => {
-      removeCategory(e, category.id);
-   }} variant="contained" color="secondary">
+                                                removeCategory(e, category.id);
+                                            }} variant="contained" color="secondary">
                                                 delete
                                             </Button>
                                         </ListItem>
