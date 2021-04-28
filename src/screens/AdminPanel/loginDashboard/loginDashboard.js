@@ -30,13 +30,13 @@ export const LoginDashboard = () => {
             return;
         }
         const response = await axios.post(
-            'http://localhost/api/login.php',
+            'http://localhost/api/dashboard-login.php',
             data,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data['isValid'])
+        console.log(response.data['isAdmin'])
         console.log(response.data['errorMessage'])
-        if (response.data['isValid'] === true) {
+        if (response.data['isAdmin'] === true) {
             history.push("/dashboard")
             localStorage.setItem('isAuthorized', true);
         }
@@ -57,6 +57,7 @@ export const LoginDashboard = () => {
                             id="outlined-basic"
                             label="User name"
                             variant="outlined"
+                            name="UserName"
                             onChange={handleChange}
                         />
                     </div>
@@ -67,6 +68,7 @@ export const LoginDashboard = () => {
                             label="Password"
                             variant="outlined"
                             type="password"
+                            name="Password"
                             onChange={handleChange}
                         />
                     </div>
