@@ -11,11 +11,15 @@ const Login = () => {
     const history = useHistory();
     const classes = useStyles();
     const [data, setData] = React.useState({})
+
     const handleChange = (event) => {
         console.log(event.target.name);
         console.log(event.target.value);
+        
         setData({ ...data, [event.target.name]: event.target.value })
     };
+
+  
     const Login = async () => {
         console.log(data);
         console.log(data['UserName']);
@@ -27,6 +31,14 @@ const Login = () => {
             alert('Password cannot be empty');
             return;
         }
+        var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        //            ^                                       ^   
+       if(format.test(data['UserName'])){
+            alert('Username should contain only charecters ');
+            return;
+        }
+       
+       
         const response = await axios.post(
             'http://localhost/api/login.php',
             data,
