@@ -7,8 +7,8 @@ import { Redirect } from 'react-router-dom';
 const Dashboard = () => {
     const classes = useStyles();
 
-    // if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
-    //     return <Redirect to='/logind' />
+    if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
+        return <Redirect to='/logind' />
 
     return (
         <div className={classes.root}>

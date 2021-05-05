@@ -2,9 +2,13 @@ import React from "react";
 import useStyles from './ApproveServiceProvider.style';
 import HeaderDashboard from "../../../components/headerDashboard/headerDashboard";
 import NavbarDashboard from "../../../components/navbarDashboard/navbarDashboard";
+import { Redirect } from 'react-router-dom';
 
 const ApproveServiceProvider = () => {
     const classes = useStyles();
+
+    if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
+        return <Redirect to='/logind' />
 
     return (
         <div className={classes.root}>

@@ -10,6 +10,9 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
+    },
+    table1: {
+        width: "90%",
     }
 }))
 

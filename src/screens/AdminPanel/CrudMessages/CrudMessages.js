@@ -4,6 +4,7 @@ import HeaderDashboard from "../../../components/headerDashboard/headerDashboard
 import NavbarDashboard from "../../../components/navbarDashboard/navbarDashboard";
 import { DataGrid } from '@material-ui/data-grid';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 const CrudMessages = () => {
     const classes = useStyles();
@@ -23,6 +24,9 @@ const CrudMessages = () => {
         GetEmailFromDB();
     }, []);
 
+    if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
+        return <Redirect to='/logind' />
+
     return (
         <div className={classes.root}>
             <HeaderDashboard />
@@ -30,8 +34,14 @@ const CrudMessages = () => {
                 <NavbarDashboard />
                 <div className={classes.table}>
                     <h1>Emails</h1>
-                    <div style={{ height: '400px', width: '95%' }}>
+                    {/* <div style={{ height: '400px', width: '95%' }}>
                         <DataGrid rows={email} columns={columns} pageSize={5} checkboxSelection />
+                    </div> */}
+                    <div style={{ height: '400px', width: '95%' }}>
+                        <DataGrid
+                            columns={columns}
+                            rows={email}
+                        />
                     </div>
                 </div>
             </div>

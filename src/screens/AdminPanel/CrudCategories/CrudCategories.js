@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Divider from '@material-ui/core/Divider';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
+import { Redirect } from 'react-router-dom';
 
 const CrudCategories = () => {
     const classes = useStyles();
@@ -52,7 +53,8 @@ const CrudCategories = () => {
 
         const res = await axios.delete('http://localhost/api/skills.php',
             { data: { categoryid: id } },
-            { headers: { 'Content-Type': 'application/json' } });
+            { headers: { 'Content-Type': 'application/json' } }
+        );
 
 
         // await axios.delete(
@@ -68,6 +70,8 @@ const CrudCategories = () => {
         }
     };
 
+    if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
+        return <Redirect to='/logind' />
 
     return (
         <div className={classes.root}>
