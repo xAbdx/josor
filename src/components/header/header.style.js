@@ -11,7 +11,6 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
-        // backgroundColor: "#F5F5F5"
     },
     logo: {
         color: "#068842",
@@ -26,6 +25,13 @@ const useStyles = makeStyles((theme) => ({
         padding: "23px",
         height: "20px",
         textDecoration: "none",
+    },
+    list1: {
+        listStyle: "none",
+        display: "flex",
+        justifyContent: "space-between",
+        textDecoration: "none",
+        padding: "0px",
     },
     link: {
         marginRight: "35px",

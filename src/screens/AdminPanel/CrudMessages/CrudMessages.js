@@ -5,6 +5,7 @@ import NavbarDashboard from "../../../components/navbarDashboard/navbarDashboard
 import { DataGrid } from '@material-ui/data-grid';
 import axios from 'axios';
 import { Redirect } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 const CrudMessages = () => {
     const classes = useStyles();
@@ -12,6 +13,21 @@ const CrudMessages = () => {
     const columns = [
         { field: 'id', headerName: 'ID', width: 70 },
         { field: 'email', headerName: 'Email', width: 250 },
+        {
+            field: 'contactViaEmail', headerName: 'Contact via email', width: 250,
+            renderCell: (params) => (
+                <Button
+                    onClick={() => window.open("https://mail.google.com/", "_blank")}
+                    title="support@example.com"
+                    variant="contained"
+                    color="primary"
+                    size="small"
+                    style={{ marginLeft: 16 }}
+                >
+                    Contact via email
+                </Button>
+            )
+        },
     ];
 
     const [email, setEmail] = useState([])
@@ -37,7 +53,7 @@ const CrudMessages = () => {
                     {/* <div style={{ height: '400px', width: '95%' }}>
                         <DataGrid rows={email} columns={columns} pageSize={5} checkboxSelection />
                     </div> */}
-                    <div style={{ height: '400px', width: '95%' }}>
+                    <div style={{ height: '400px', width: '75%' }}>
                         <DataGrid
                             columns={columns}
                             rows={email}

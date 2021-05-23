@@ -1,14 +1,23 @@
 import useStyles from './newService.style'
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 import Button from '@material-ui/core/Button';
 import { MdAdd } from "react-icons/md";
-// import { MdAttachFile } from "react-icons/md";
+import { Redirect } from 'react-router-dom';
 
 
 const NewService = () => {
     const classes = useStyles();
-    const history = useHistory();
+    // const history = useHistory();
+
+    const renderAuthButton = () => {
+        if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null) {
+            return alert("Please Login First");
+        }
+        else {
+            return <Redirect to='/new-job' />
+        }
+    }
 
     return (
         <div className={classes.root}>
@@ -18,11 +27,9 @@ const NewService = () => {
             </div>
             <div className={classes.leftColumn}>
                 <div className={classes.btn}>
-                    <Button variant="contained" endIcon={<MdAdd />} onClick={() => { history.push("/new-job") }}>Add new service</Button>
+                    {/* <Button variant="contained" endIcon={<MdAdd />} onClick={() => { history.push("/new-job") }}>Add new service</Button> */}
+                    <Button variant="contained" endIcon={<MdAdd />} onClick={renderAuthButton}>Add new service</Button>
                 </div>
-                {/* <div className={classes.btn}>
-                    <Button variant="contained" endIcon={<MdAttachFile />}>Most Recent    </Button>
-                </div> */}
             </div>
         </div>
     );

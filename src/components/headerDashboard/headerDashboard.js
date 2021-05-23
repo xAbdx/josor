@@ -1,6 +1,5 @@
 import React from 'react'
 import useStyles from './headerDashboard.style'
-import { Redirect } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 const HeaderDashboard = () => {
@@ -9,8 +8,6 @@ const HeaderDashboard = () => {
         localStorage.removeItem('isAuthorized');
 
     };
-    // if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
-    //     return <Redirect to='/' />
 
     return (
         <div className={classes.root}>

@@ -45,6 +45,7 @@ const CrudCategories = () => {
             { headers: { 'Content-Type': 'application/json' } }
         )
         console.log(response.data)
+        window.location.reload(false);
     };
 
     const removeCategory = async (category, id) => {
@@ -68,6 +69,7 @@ const CrudCategories = () => {
         else {
             alert(res.data.errorMessage);
         }
+        window.location.reload(false);
     };
 
     if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)

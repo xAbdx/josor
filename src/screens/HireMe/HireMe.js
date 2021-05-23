@@ -13,6 +13,7 @@ import { useHistory } from "react-router-dom";
 // import FormControl from '@material-ui/core/FormControl';
 // import Select from '@material-ui/core/Select';
 import Select from 'react-select';
+import { Redirect } from 'react-router-dom';
 
 
 const HireMe = () => {
@@ -83,6 +84,9 @@ const HireMe = () => {
 
     const { result, uploader } = useDisplayImage();
 
+    if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
+        return <Redirect to='/' />
+    // alert("Please login first");
 
     return (
         <div>

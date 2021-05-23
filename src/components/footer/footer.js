@@ -48,6 +48,7 @@ const Footer = () => {
             { headers: { 'Content-Type': 'application/json' } }
         )
         console.log(response.data)
+        alert("sent successfully")
     };
 
     return (

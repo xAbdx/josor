@@ -30,6 +30,7 @@ const ShowUsers = () => {
         { title: 'Name', field: 'name' },
         { title: 'Email', field: 'email' },
         { title: 'Phone', field: 'phone', type: 'numeric' },
+        { title: 'User Type', field: 'userTypeid', type: 'numeric' },
     ];
 
     // const [columns, setColumns] = useState([
@@ -41,7 +42,7 @@ const ShowUsers = () => {
 
     const [data, setData] = useState([])
     const GetUsersFromDB = async () => {
-        const response = await axios.get("http://localhost/api/Users.php");
+        const response = await axios.get("http://localhost/api/user.php");
         setData(response.data);
         console.log(response);
     }
@@ -84,7 +85,7 @@ const ShowUsers = () => {
                     </div> */}
                     <div className={classes.table1}>
                         <MaterialTable
-                            title="Simple Action Preview"
+                            title="Take a peek"
                             columns={columns}
                             data={data}
                             editable={{
