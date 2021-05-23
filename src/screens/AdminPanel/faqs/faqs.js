@@ -22,7 +22,6 @@ const Faq = () => {
     const GetQuestionFromDB = async () => {
         const response = await axios.get("http://localhost/api/faq.php");
         setQuestion(response.data);
-        console.log(response);
     }
     useEffect(() => {
         GetQuestionFromDB();
@@ -34,7 +33,6 @@ const Faq = () => {
         answer: "",
     });
     const handleChange = (event) => {
-        console.log(event);
         setData({ ...data, [event.target.name]: event.target.value })
     };
     const insertFaq = async () => {
@@ -49,12 +47,10 @@ const Faq = () => {
             faq,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data)
     };
 
     const removefaq = async (faq, id) => {
-        console.log(faq.target.value);
-        console.log(id);
+      
 
         const res = await axios.delete('http://localhost/api/faq.php?faq_id=' + id,
             {},

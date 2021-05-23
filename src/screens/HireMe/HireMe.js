@@ -27,8 +27,7 @@ const HireMe = () => {
         setData({ ...data, [event.target.name]: event.target.value })
     };
     const ServiceProviderInfo = async () => {
-        console.log('test');
-        console.log(data);
+       
         const user = {
             id: data.id,
             serviceProviderUserId: data.serviceProviderUserId,
@@ -41,14 +40,14 @@ const HireMe = () => {
             user,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data)
+      
     };
 
     const [skill, setSkill] = useState([])
     const GetSkillsFromDB = async () => {
         const response = await axios.get("http://localhost/api/skills.php");
         setSkill(response.data);
-        console.log(response);
+       
     }
     useEffect(() => {
         GetSkillsFromDB();

@@ -13,14 +13,12 @@ export const LoginDashboard = () => {
 
     const [data, setData] = React.useState({})
     const handleChange = (event) => {
-        console.log(event.target.name);
-        console.log(event.target.value);
+       
         setData({ ...data, [event.target.name]: event.target.value })
     };
 
     const Login = async () => {
-        console.log(data);
-        console.log(data['UserName']);
+      
         if (data['UserName'] === undefined || data['UserName'].length === 0) {
             alert('Username cannot be empty');
             return;
@@ -34,8 +32,7 @@ export const LoginDashboard = () => {
             data,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data['isAdmin'])
-        console.log(response.data['errorMessage'])
+       
         if (response.data['isAdmin'] === true) {
             history.push("/dashboard")
             localStorage.setItem('isAuthorized', true);

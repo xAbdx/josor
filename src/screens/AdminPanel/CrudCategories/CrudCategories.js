@@ -18,7 +18,7 @@ const CrudCategories = () => {
     const GetCategoriesFromDB = async () => {
         const response = await axios.get("http://localhost/api/skills.php");
         setCategories(response.data);
-        console.log(response);
+       
     }
     useEffect(() => {
         GetCategoriesFromDB();
@@ -29,12 +29,11 @@ const CrudCategories = () => {
         name: "",
     });
     const handleChange = (event) => {
-        console.log(event);
+       
         setData({ ...data, [event.target.name]: event.target.value })
     };
     const insertCategory = async () => {
-        console.log('test');
-        console.log(data);
+       
         const category = {
             id: data.id,
             name: data.name,
@@ -44,12 +43,11 @@ const CrudCategories = () => {
             category,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data)
+   
     };
 
     const removeCategory = async (category, id) => {
-        console.log(category.target.value);
-        console.log(id);
+       
 
         const res = await axios.delete('http://localhost/api/skills.php',
             { data: { categoryid: id } },
@@ -61,7 +59,6 @@ const CrudCategories = () => {
         //     'http://localhost/api/skills.php',
         //     { headers: { 'Content-Type': 'application/json' } }
         // )
-        console.log(res);
         if (res.data.isValid) {
             alert('deleted successfully ');
         }

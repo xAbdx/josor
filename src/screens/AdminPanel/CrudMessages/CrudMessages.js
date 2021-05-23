@@ -18,7 +18,7 @@ const CrudMessages = () => {
     const GetEmailFromDB = async () => {
         const response = await axios.get("http://localhost/api/contact-us.php");
         setEmail(response.data);
-        console.log(response);
+    
     }
     useEffect(() => {
         GetEmailFromDB();

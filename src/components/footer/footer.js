@@ -14,7 +14,6 @@ const Footer = () => {
     })
 
     const handleChange = (event) => {
-        console.log(event);
         setData({ ...data, [event.target.name]: event.target.value })
     };
 
@@ -23,7 +22,7 @@ const Footer = () => {
     const [message, setMessage] = useState('');
 
     const validateEmail = (event) => {
-        console.log(event);
+       
         setData({ ...data, [event.target.name]: event.target.value })
         const email = event.target.value;
         if (emailRegex.test(email)) {
@@ -36,8 +35,7 @@ const Footer = () => {
     };
 
     const insertEmail = async () => {
-        console.log('test');
-        console.log(data);
+       
         const user = {
             id: data.id,
             email: data.email,
@@ -47,7 +45,7 @@ const Footer = () => {
             user,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data)
+      
     };
 
     return (

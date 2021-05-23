@@ -8,20 +8,17 @@ import axios from 'axios';
 const Jobs = () => {
     const classes = useStyles();
     let { params } = useRouteMatch();
-    console.log(params);
+    
     const [jobsBySection, setJobsBySection] = useState([])
     const GetJobsFromDB = async () => {
-        // console.log("http://localhost:8081/josor/jobs.php?skill_id ${}");
         const response = await axios.get("http://localhost/api/jobs.php?skill_id=" + params.id);
-        console.log(response.data);
         if (response.data.length > 0)
             setJobsBySection(response.data);
     }
     useEffect(() => {
         GetJobsFromDB();
     }, []);
-    // console.log(params); //for testing
-    // console.log(newJob);
+   
     return (
         <div>
             <Header />

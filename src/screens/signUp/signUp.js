@@ -17,12 +17,11 @@ const SingUp = () => {
 
     })
     const handleChange = (event) => {
-        console.log(event);
+       
         setData({ ...data, [event.target.name]: event.target.value })
     };
     const insertUser = async () => {
-        console.log('test');
-        console.log(data);
+       
         const user = {
             id: data.id,
             name: data.username,
@@ -36,7 +35,7 @@ const SingUp = () => {
             user,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data)
+       
     };
     const classes = useStyles();
     const history = useHistory();

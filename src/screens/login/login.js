@@ -13,16 +13,14 @@ const Login = () => {
     const [data, setData] = React.useState({})
 
     const handleChange = (event) => {
-        console.log(event.target.name);
-        console.log(event.target.value);
+       
         
         setData({ ...data, [event.target.name]: event.target.value })
     };
 
   
     const Login = async () => {
-        console.log(data);
-        console.log(data['UserName']);
+       
         if (data['UserName'] === undefined || data['UserName'].length === 0) {
             alert('Username cannot be empty');
             return;
@@ -44,8 +42,7 @@ const Login = () => {
             data,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data['isValid'])
-        console.log(response.data['errorMessage'])
+       
         if (response.data['isValid'] == true) {
             history.push("/home")
             localStorage.setItem('isAuthorized', true);
