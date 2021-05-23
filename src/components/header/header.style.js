@@ -17,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "50px",
         fontWeight: "bold",
         fontSize: "36px",
+        cursor: "pointer",
     },
     list: {
         listStyle: "none",

@@ -1,9 +1,12 @@
 import React from "react";
 import useStyles from './header.style'
 import { NavLink } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 const Header = () => {
     const classes = useStyles();
+    const history = useHistory();
+
     const clearLogin = async () => {
         localStorage.removeItem('isAuthorized');
 
@@ -22,10 +25,15 @@ const Header = () => {
         }
     }
 
+    const redirectLogo = () => {
+        history.push(`/home`)
+
+    }
+
     return (
         <div className={classes.header}>
             <div>
-                <h1 className={classes.logo}>Josor</h1>
+                <h1 className={classes.logo} onClick={redirectLogo}>Josor</h1>
             </div>
             <div>
                 <ul className={classes.list}>
