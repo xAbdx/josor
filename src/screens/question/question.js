@@ -52,11 +52,11 @@ const Question = () => {
                                         aria-controls="panel1a-content"
                                         id="panel1a-header"
                                     >
-                                        <Typography className={classes.heading}>{item.Question}</Typography>
+                                        <Typography className={classes.heading}>{item.question}</Typography>
                                     </AccordionSummary>
                                     <AccordionDetails>
                                         <Typography>
-                                            {item.Answer}
+                                            {item.answer}
                                         </Typography>
                                     </AccordionDetails>
                                 </Accordion>

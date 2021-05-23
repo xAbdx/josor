@@ -49,6 +49,23 @@ const ShowUsers = () => {
         GetUsersFromDB();
     }, []);
 
+    const removeUser = async (user, id) => {
+        console.log(user.target.value);
+        console.log(id);
+
+        const res = await axios.delete('http://localhost/api/user.php?user_id=' + id,
+            {},
+            { headers: { 'Content-Type': 'application/json' } }
+        );
+        console.log(res);
+        if (res.data.isValid) {
+            alert('deleted successfully ');
+        }
+        else {
+            alert(res.data.errorMessage);
+        }
+    }
+
     if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
         return <Redirect to='/logind' />
 
@@ -97,9 +114,11 @@ const ShowUsers = () => {
                                             const index = oldData.tableData.id;
                                             dataDelete.splice(index, 1);
                                             setData([...dataDelete]);
+                                            //  removeU0ser(index);
 
                                             resolve()
                                         }, 1000)
+                                        console.log(this);
                                     }),
                             }}
                             options={{

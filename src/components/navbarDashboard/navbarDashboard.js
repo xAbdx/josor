@@ -52,6 +52,28 @@ const NavbarDashboard = () => {
                             Show users
                         </NavLink>
                     </li>
+
+                    <li className={classes.item}>
+                        <NavLink
+                            exact
+                            to="/faqs"
+                            activeClassName={classes.activeStyle}
+                            className={classes.link}
+                        >
+                            Manage Faqs
+                        </NavLink>
+                    </li>
+
+                    <li className={classes.item}>
+                        <NavLink
+                            exact
+                            to="/dashboard"
+                            activeClassName={classes.activeStyle}
+                            className={classes.link}
+                        >
+                            Manage Skills
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
         </div>
