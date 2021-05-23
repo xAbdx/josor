@@ -70,7 +70,7 @@ const CrudCategories = () => {
             alert(res.data.errorMessage);
         }
         window.location.reload(false);
-    };
+    }
 
     if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
         return <Redirect to='/logind' />

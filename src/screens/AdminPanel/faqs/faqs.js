@@ -14,6 +14,7 @@ import AccordionSummary from '@material-ui/core/AccordionSummary';
 import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import { Redirect } from 'react-router-dom';
 
 const Faq = () => {
     const classes = useStyles();
@@ -22,7 +23,6 @@ const Faq = () => {
     const GetQuestionFromDB = async () => {
         const response = await axios.get("http://localhost/api/faq.php");
         setQuestion(response.data);
-        console.log(response);
     }
     useEffect(() => {
         GetQuestionFromDB();
@@ -33,12 +33,12 @@ const Faq = () => {
         question: "",
         answer: "",
     });
+
     const handleChange = (event) => {
-        console.log(event);
         setData({ ...data, [event.target.name]: event.target.value })
     };
-    const insertFaq = async () => {
 
+    const insertFaq = async () => {
         const faq = {
             id: data.id,
             question: data.question,
@@ -49,13 +49,10 @@ const Faq = () => {
             faq,
             { headers: { 'Content-Type': 'application/json' } }
         )
-        console.log(response.data)
+        window.location.reload(false);
     };
 
     const removefaq = async (faq, id) => {
-        console.log(faq.target.value);
-        console.log(id);
-
         const res = await axios.delete('http://localhost/api/faq.php?faq_id=' + id,
             {},
             { headers: { 'Content-Type': 'application/json' } });
@@ -66,8 +63,11 @@ const Faq = () => {
         else {
             alert(res.data.errorMessage);
         }
+        window.location.reload(false);
     };
 
+    if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
+        return <Redirect to='/logind' />
 
     return (
         <div className={classes.root}>

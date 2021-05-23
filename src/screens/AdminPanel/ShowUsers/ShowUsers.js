@@ -44,21 +44,17 @@ const ShowUsers = () => {
     const GetUsersFromDB = async () => {
         const response = await axios.get("http://localhost/api/user.php");
         setData(response.data);
-        console.log(response);
     }
     useEffect(() => {
         GetUsersFromDB();
     }, []);
 
-    const removeUser = async (user, id) => {
-        console.log(user.target.value);
-        console.log(id);
 
-        const res = await axios.delete('http://localhost/api/user.php?user_id=' + id,
+    const removeUser = async (data) => {
+        const res = await axios.delete('http://localhost/api/user.php?user_id=' + data['id'],
             {},
             { headers: { 'Content-Type': 'application/json' } }
         );
-        console.log(res);
         if (res.data.isValid) {
             alert('deleted successfully ');
         }
@@ -66,6 +62,32 @@ const ShowUsers = () => {
             alert(res.data.errorMessage);
         }
     }
+
+    const addUser = async (data) => {
+
+        console.log(data);
+        //     const res = await axios.delete('http://localhost/api/user.php?user_id=' + data['id'],
+        //     {},
+        //     { headers: { 'Content-Type': 'application/json' } }
+        // );
+        // if (res.data.isValid) {
+        //     alert('deleted successfully ');
+        // }
+        // else {
+        //     alert(res.data.errorMessage);
+        // }
+    }
+
+    const updateUser = async (newData, oldData) => {
+        console.log('old data');
+        console.log(oldData);
+
+        console.log('new data');
+        console.log(newData);
+    }
+
+
+
 
     if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null)
         return <Redirect to='/logind' />
@@ -77,20 +99,16 @@ const ShowUsers = () => {
                 <NavbarDashboard />
                 <div className={classes.table}>
                     <h1>Users</h1>
-                    {/* <div style={{ height: '400px', width: '95%' }}>
-                        <DataGrid rows={users} columns={columns} pageSize={50} />
-                    </div> */}
-                    {/* <div style={{ height: '400px', width: '95%' }}>
-                        <DataGrid rows={users} columns={columns} pageSize={5} checkboxSelection />
-                    </div> */}
+
                     <div className={classes.table1}>
                         <MaterialTable
                             title="Take a peek"
                             columns={columns}
                             data={data}
                             editable={{
-                                onRowAdd: newData =>
+                                onRowAdd: (newData) =>
                                     new Promise((resolve, reject) => {
+                                        addUser(newData);
                                         setTimeout(() => {
                                             setData([...data, newData]);
 
@@ -99,6 +117,8 @@ const ShowUsers = () => {
                                     }),
                                 onRowUpdate: (newData, oldData) =>
                                     new Promise((resolve, reject) => {
+
+                                        updateUser(newData, oldData);
                                         setTimeout(() => {
                                             const dataUpdate = [...data];
                                             const index = oldData.tableData.id;
@@ -110,6 +130,7 @@ const ShowUsers = () => {
                                     }),
                                 onRowDelete: oldData =>
                                     new Promise((resolve, reject) => {
+                                        removeUser(oldData);
                                         setTimeout(() => {
                                             const dataDelete = [...data];
                                             const index = oldData.tableData.id;
@@ -119,7 +140,7 @@ const ShowUsers = () => {
 
                                             resolve()
                                         }, 1000)
-                                        console.log(this);
+
                                     }),
                             }}
                             options={{

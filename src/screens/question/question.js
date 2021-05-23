@@ -33,7 +33,7 @@ const Question = () => {
     const GetQuestionFromDB = async () => {
         const response = await axios.get("http://localhost/api/faq.php");
         setQuestion(response.data);
-        console.log(response);
+       
     }
     useEffect(() => {
         GetQuestionFromDB();

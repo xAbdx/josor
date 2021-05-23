@@ -20,6 +20,7 @@ const Home = () => {
     const history = useHistory();
 
     const goTo = (id) => {
+       
         history.push(`/jobs/${id}`)
     }
 
@@ -28,7 +29,7 @@ const Home = () => {
     const GetCategoryFromDB = async () => {
         const response = await axios.get("http://localhost/api/skills.php?job_id=");
         setSections(response.data);
-        console.log(response);
+      
     }
 
     useEffect(() => {

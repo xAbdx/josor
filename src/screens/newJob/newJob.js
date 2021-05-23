@@ -30,7 +30,7 @@ const NewJob = () => {
     const GetCategoryFromDB = async () => {
         const response = await axios.get("http://localhost/api/skills.php");
         setOption(response.data);
-        console.log(response);
+     
     }
 
     useEffect(() => {
