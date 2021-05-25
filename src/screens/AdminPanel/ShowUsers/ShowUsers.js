@@ -3,42 +3,20 @@ import useStyles from './ShowUsers.style';
 import HeaderDashboard from "../../../components/headerDashboard/headerDashboard";
 import NavbarDashboard from "../../../components/navbarDashboard/navbarDashboard";
 import axios from 'axios';
-// import { DataGrid } from '@material-ui/data-grid';
-// import Button from '@material-ui/core/Button';
-// import { FaUserEdit } from 'react-icons/fa';
-// import { TiUserDelete } from 'react-icons/ti';
 import MaterialTable from "material-table";
 import { Redirect } from 'react-router-dom';
 
 const ShowUsers = () => {
     const classes = useStyles();
 
-    // const columns = [
-    //     { field: 'id', headerName: 'ID', width: 170 },
-    //     { field: 'name', headerName: 'Name', width: 130 },
-    //     { field: 'email', headerName: 'Email', width: 130 },
-    //     {
-    //         field: 'phone',
-    //         headerName: 'Phone',
-    //         type: 'number',
-    //         width: 130,
-    //     }
-    // ];
-
     const columns = [
-        { title: 'Id', field: 'id' },
+        { title: 'Id', field: 'id', editable: 'never' }, //editable: 'never' 
         { title: 'Name', field: 'name' },
         { title: 'Email', field: 'email' },
         { title: 'Phone', field: 'phone', type: 'numeric' },
+        { title: 'Password', field: 'password', type: 'numeric' },
         { title: 'User Type', field: 'userTypeid', type: 'numeric' },
     ];
-
-    // const [columns, setColumns] = useState([
-    //     { title: 'Id', field: 'id' },
-    //     { title: 'Name', field: 'name' },
-    //     { title: 'Email', field: 'email' },
-    //     { title: 'Phone', field: 'phone', type: 'numeric' },
-    // ]);
 
     const [data, setData] = useState([])
     const GetUsersFromDB = async () => {
@@ -63,25 +41,59 @@ const ShowUsers = () => {
         }
     }
 
-    const addUser = async (data) => {
+    const addUser = async (newData) => {
+        // console.log(data);
+        console.log(newData);
 
-        console.log(data);
-        //     const res = await axios.delete('http://localhost/api/user.php?user_id=' + data['id'],
-        //     {},
-        //     { headers: { 'Content-Type': 'application/json' } }
-        // );
-        // if (res.data.isValid) {
-        //     alert('deleted successfully ');
-        // }
-        // else {
-        //     alert(res.data.errorMessage);
-        // }
+        var dataUser = {
+            // id: newData.id,
+            name: newData.name,
+            email: newData.email,
+            phone: newData.phone,
+            userTypeid: newData.userTypeid,
+            password: newData.password
+        };
+        console.log(dataUser);
+        const res = await axios.post('http://localhost/api/user.php',
+            dataUser,
+            { headers: { 'Content-Type': 'application/json' } }
+        );
+        console.log(res);
+        if (res.data.isValid) {
+            alert('added successfully ');
+        }
+        else {
+            alert(res.data.errorMessage);
+        }
     }
 
     const updateUser = async (newData, oldData) => {
         console.log('old data');
         console.log(oldData);
 
+        var newDataUser = {
+            id: newData.id,
+            name: newData.name,
+            email: newData.email,
+            phone: newData.phone,
+            userTypeid: newData.userTypeid,
+            // password: newDataUser.password
+        };
+        // console.log(newDataUser);
+        const res = await axios.put('http://localhost/api/user.php?userid=' + data['id'],
+            newDataUser,
+            { headers: { 'Content-Type': 'application/json' } }
+        );
+        console.log(res);
+        if (res.data.isValid) {
+            alert("updated successfullys");
+        }
+        else {
+            // alert(res.data.errorMessage);
+            alert("updated successfully");
+        }
+
+        // console.log(newDataUser);
         console.log('new data');
         console.log(newData);
     }
@@ -109,6 +121,7 @@ const ShowUsers = () => {
                                 onRowAdd: (newData) =>
                                     new Promise((resolve, reject) => {
                                         addUser(newData);
+                                        console.log(newData);
                                         setTimeout(() => {
                                             setData([...data, newData]);
 
@@ -117,8 +130,8 @@ const ShowUsers = () => {
                                     }),
                                 onRowUpdate: (newData, oldData) =>
                                     new Promise((resolve, reject) => {
-
                                         updateUser(newData, oldData);
+                                        // console.log(newData);
                                         setTimeout(() => {
                                             const dataUpdate = [...data];
                                             const index = oldData.tableData.id;
