@@ -11,9 +11,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
     },
-    item: {
-        width: "90%"
-    },
+    // item: {
+    //     width: "90%"
+    // },
     addSection: {
         display: "flex",
         justifyContent: "space-around",

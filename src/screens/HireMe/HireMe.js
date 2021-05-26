@@ -28,7 +28,7 @@ const HireMe = () => {
         setData({ ...data, [event.target.name]: event.target.value })
     };
     const ServiceProviderInfo = async () => {
-       
+
         const user = {
             id: data.id,
             serviceProviderUserId: data.serviceProviderUserId,
@@ -41,14 +41,14 @@ const HireMe = () => {
             user,
             { headers: { 'Content-Type': 'application/json' } }
         )
-      
+
     };
 
     const [skill, setSkill] = useState([])
     const GetSkillsFromDB = async () => {
         const response = await axios.get("http://localhost/api/skills.php");
         setSkill(response.data);
-       
+
     }
     useEffect(() => {
         GetSkillsFromDB();
@@ -96,7 +96,7 @@ const HireMe = () => {
                 </div>
                 <div className={classes.card}>
                     <div className={classes.items}>
-                        <TextField className={classes.inputField1} required id="outlined-basic" label="Location" variant="outlined" onChange={handleChange} />
+                        {/* <TextField className={classes.inputField1} required id="outlined-basic" label="Location" variant="outlined" onChange={handleChange} /> */}
 
                         <TextField className={classes.inputField1} required id="outlined-basic" label="kind of disability" variant="outlined" onChange={handleChange} />
 
@@ -105,7 +105,7 @@ const HireMe = () => {
                             isMulti
                             name="colors"
                             options={options}
-                            classNamePrefix="select"
+                            classNamePrefix="Your Skills"
                         >
                             {/* <MenuItem value={20}>Twenty</MenuItem> */}
                         </Select>

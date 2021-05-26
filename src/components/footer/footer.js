@@ -45,6 +45,12 @@ const Footer = () => {
             user,
             { headers: { 'Content-Type': 'application/json' } }
         )
+        if (response) {
+            alert("sent successfully")
+            window.location.reload(false);
+        } else {
+            alert("error")
+        }
 
     };
 

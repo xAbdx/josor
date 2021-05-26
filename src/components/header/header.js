@@ -12,6 +12,12 @@ const Header = () => {
 
     };
 
+    const beServiceProviderAuthButton = () => {
+        if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null) {
+            return alert("Please Login First");
+        }
+    }
+
     const renderAuthButton = () => {
         if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null) {
             return <li><NavLink exact to="/" activeClassName={classes.activeStyle} className={classes.link}>login</NavLink></li>;
@@ -44,7 +50,7 @@ const Header = () => {
 
                     <li><NavLink exact to="/faq" activeClassName={classes.activeStyle} className={classes.link}>FAQ</NavLink></li>
 
-                    <li><NavLink exact to="/hireme" activeClassName={classes.activeStyle} className={classes.link}>Be Service Provider</NavLink></li>
+                    <li><NavLink exact to="/hireme" activeClassName={classes.activeStyle} onClick={beServiceProviderAuthButton} className={classes.link}>Be Service Provider</NavLink></li>
 
                     {renderAuthButton()}
 
