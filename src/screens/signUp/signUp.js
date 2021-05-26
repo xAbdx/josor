@@ -7,38 +7,56 @@ import clsx from 'clsx';
 import axios from 'axios';
 
 const SingUp = () => {
+    const classes = useStyles();
+    const history = useHistory();
+
     const [data, setData] = React.useState({
         id: "",
         username: "",
         email: "",
+        phone: "",
         password: "",
         confirmPassword: "",
+    });
 
-
-    })
     const handleChange = (event) => {
-       
         setData({ ...data, [event.target.name]: event.target.value })
     };
+
     const insertUser = async () => {
-       
         const user = {
             id: data.id,
             name: data.username,
             email: data.email,
+            phone: data.phone,
             password: data.password,
-            phone: 13444,
-            userTypeid: 1
+            confirmPassword: data.confirmPassword,
+            userTypeid: 2
         };
-        const response = await axios.post(
-            'http://localhost/api/Users.php',
+        // const response = await axios.post(
+        //     'http://localhost/api/Users.php',
+        //     user,
+        //     { headers: { 'Content-Type': 'application/json' } }
+        // )
+        // console.log(response);
+        // if (response) {
+        //     alert("sdaf")
+        // }
+        // console.log(user);
+        const res = await axios.post('http://localhost/api/user.php',
             user,
             { headers: { 'Content-Type': 'application/json' } }
-        )
-       
+        );
+        console.log(res);
+
+        if (user.password != user.confirmPassword) {
+            alert("error");
+        } else {
+            alert('Welcome ☺');
+            history.push("/");
+        }
     };
-    const classes = useStyles();
-    const history = useHistory();
+
     return (
         <div className={classes.page}>
             <div className={classes.container2}>
@@ -60,10 +78,11 @@ const SingUp = () => {
                                     // value={phone}
                                     id="outlined-basic"
                                     label="Phone number"
-                                    inputProps={{ maxLength: 5 }}
+                                    inputProps={{ maxLength: 10 }}
                                     // error={Boolean(errors?.phone)}
                                     // helperText={{ setErrors }}
                                     type="number"
+                                    name="phone"
                                     variant="outlined"
                                     onChange={handleChange}
                                 />
