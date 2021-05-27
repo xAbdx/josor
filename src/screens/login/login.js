@@ -13,14 +13,14 @@ const Login = () => {
     const [data, setData] = React.useState({})
 
     const handleChange = (event) => {
-       
-        
+
+
         setData({ ...data, [event.target.name]: event.target.value })
     };
 
-  
+
     const Login = async () => {
-       
+
         if (data['UserName'] === undefined || data['UserName'].length === 0) {
             alert('Username cannot be empty');
             return;
@@ -31,18 +31,18 @@ const Login = () => {
         }
         var format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
         //            ^                                       ^   
-       if(format.test(data['UserName'])){
+        if (format.test(data['UserName'])) {
             alert('Username should contain only charecters ');
             return;
         }
-       
-       
+
+
         const response = await axios.post(
             'http://localhost/api/login.php',
             data,
             { headers: { 'Content-Type': 'application/json' } }
         )
-       
+
         if (response.data['isValid'] == true) {
             history.push("/home")
             localStorage.setItem('isAuthorized', true);

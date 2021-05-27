@@ -24,6 +24,49 @@ const SingUp = () => {
     };
 
     const insertUser = async () => {
+        if (data['username'] === undefined || data['username'].length === 0) {
+            alert('Username cannot be empty');
+            return;
+        };
+
+        const format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        //            ^                                       ^   
+        if (format.test(data['username'])) {
+            alert('Username should contain only charecters ');
+            return;
+        };
+
+        if (data['email'] === undefined || data['email'].length === 0) {
+            alert('Email cannot be empty');
+            return;
+        };
+
+        const emailRegex = /\S+@\S+\.\S+/;
+        if (!emailRegex.test(data['email'])) {
+            alert('Invalid Email');
+            return;
+        };
+
+        if (data['phone'] === undefined || data['phone'].length === 0) {
+            alert('Username cannot be empty');
+            return;
+        };
+
+        if (data['password'] === undefined || data['password'].length === 0 || data['password'].length < 8) {
+            alert('Password cannot be empty or less than 8 characters');
+            return;
+        };
+
+        if (data['confirmPassword'] === undefined || data['confirmPassword'].length === 0) {
+            alert('Confirm password cannot be empty');
+            return;
+        };
+
+        if (data['confirmPassword'] !== data['password']) {
+            alert('Password should be compatible');
+            return;
+        };
+
         const user = {
             id: data.id,
             name: data.username,
@@ -43,18 +86,16 @@ const SingUp = () => {
         //     alert("sdaf")
         // }
         // console.log(user);
+
         const res = await axios.post('http://localhost/api/user.php',
             user,
             { headers: { 'Content-Type': 'application/json' } }
         );
         console.log(res);
 
-        if (user.password != user.confirmPassword) {
-            alert("error");
-        } else {
-            alert('Welcome ☺');
-            history.push("/");
-        }
+        // if (res) {
+        //     return history.push("/")
+        // }
     };
 
     return (
