@@ -14,11 +14,13 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 const NewJob = () => {
     const [data, setData] = React.useState({
-        Titel: "",
-        Descriptionofthepost: "",
-        Price: "",
-        // Typeofservice: "",
+        Job_ID: "",
+        Job_Title: "",
+        Job_description: "",
+        price: "",
+        Skill_ID: ""
     })
+    // check the price if it takes on phpmyadmin
 
     const [option, setOption] = useState([]);
 
@@ -30,9 +32,8 @@ const NewJob = () => {
     const GetCategoryFromDB = async () => {
         const response = await axios.get("http://localhost/api/skills.php");
         setOption(response.data);
-     
-    }
 
+    }
     useEffect(() => {
         GetCategoryFromDB();
     }, []);
@@ -44,6 +45,23 @@ const NewJob = () => {
 
     const classes = useStyles();
     const history = useHistory();
+
+    const insertJob = async () => {
+        const newJob = {
+            Job_ID: data.Job_ID,
+            Job_Title: data.Job_Title,
+            Job_description: data.Job_description,
+            Skill_ID: data.Skill_ID,
+            price: data.price,
+        };
+
+        const res = await axios.post('http://localhost/api/jobs.php',
+            newJob,
+            { headers: { 'Content-Type': 'application/json' } }
+        );
+        console.log(res);
+    };
+
     return (
         <div className={classes.container}>
             <Header />
@@ -58,19 +76,10 @@ const NewJob = () => {
                             id="outlined-basic"
                             label="Titel"
                             variant="outlined"
-                            value={data.Titel}
-                            name="Title"
+                            value={data.Title}
+                            name="Job_Title"
                             onChange={handleChange} >
                         </TextField>
-                        {/* <TextField
-                            className={classes.inputField1}
-                            id="outlined-basic"
-                            label="Description of the post"
-                            variant="outlined"
-                            value={data.Descriptionofthepost}
-                            name="Descriptionofthepost"
-                            onChange={handleChange} >
-                        </TextField> */}
 
                         <TextareaAutosize
                             className={classes.inputFieldTextarea}
@@ -80,6 +89,7 @@ const NewJob = () => {
                             rowsMin={10}
                             aria-label="maximum height"
                             placeholder="Description of the post"
+                            name="Job_description"
                             onChange={handleChange}
                         />
 
@@ -89,20 +99,10 @@ const NewJob = () => {
                             label="Price"
                             type="number"
                             variant="outlined"
-                            value={data.Price}
-                            name="Price"
+                            value={data.price}
+                            name="price"
                             onChange={handleChange} >
                         </TextField>
-
-                        {/* <TextField
-                            className={classes.inputField1}
-                            id="outlined-basic"
-                            label="Type of service"
-                            variant="outlined"
-                            value={data.Typeofservice}
-                            name="Type of service"
-                            onChange={handleChange} >
-                        </TextField> */}
 
                         <FormControl variant="outlined" className={classes.inputField1}>
                             <InputLabel id="demo-simple-select-outlined-label">Type of Service</InputLabel>
@@ -112,6 +112,7 @@ const NewJob = () => {
                                 // value={option}
                                 onChange={handleChange}
                                 label="Skill"
+                                name="Skill_ID"
                                 defaultValue=""
                             >
                                 {/* <MenuItem value="">
@@ -126,7 +127,7 @@ const NewJob = () => {
                         </FormControl>
                     </div>
                     <div className={classes.item2}>
-                        <Button className={classes.btn} color="primary" orientation="vertical" aria-label="vertical contained primary button group" variant="contained">Submit</Button>
+                        <Button className={classes.btn} color="primary" orientation="vertical" aria-label="vertical contained primary button group" variant="contained" onClick={insertJob}>Submit</Button>
                         <Button className={classes.btnCancel} variant="contained" color="secondary" onClick={() => history.push("/home")} startIcon={<MdDeleteForever />}>Cancel</Button>
                     </div>
                 </div>

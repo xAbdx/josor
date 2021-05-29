@@ -35,6 +35,10 @@ const Footer = () => {
     };
 
     const insertEmail = async () => {
+        if (!emailRegex.test(data['email'])) {
+            alert('Invalid Email');
+            return;
+        }
 
         const user = {
             id: data.id,
@@ -48,10 +52,7 @@ const Footer = () => {
         if (response) {
             alert("sent successfully")
             window.location.reload(false);
-        } else {
-            alert("error")
         }
-
     };
 
     return (
