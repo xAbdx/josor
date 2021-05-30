@@ -2,21 +2,23 @@ import React, { useEffect, useState } from "react";
 import useStyles from './HireMe.style';
 import Header from '../../components/header/header';
 import Footer from "../../components/footer/footer";
-import TextField from '@material-ui/core/TextField';
+// import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { MdAttachFile } from "react-icons/md";
+// import { MdAttachFile } from "react-icons/md";
 import axios from 'axios';
 import { MdDeleteForever } from "react-icons/md";
 import { useHistory } from "react-router-dom";
-// import InputLabel from '@material-ui/core/InputLabel';
-// import MenuItem from '@material-ui/core/MenuItem';
-// import FormControl from '@material-ui/core/FormControl';
-// import Select from '@material-ui/core/Select';
-import Select from 'react-select';
+import InputLabel from '@material-ui/core/InputLabel';
+import MenuItem from '@material-ui/core/MenuItem';
+import FormControl from '@material-ui/core/FormControl';
+import Select from '@material-ui/core/Select';
 import { Redirect } from 'react-router-dom';
 
 
 const HireMe = () => {
+    const classes = useStyles();
+    const history = useHistory();
+
     const [data, setData] = React.useState({
         id: "",
         serviceProviderUserId: "",
@@ -24,11 +26,34 @@ const HireMe = () => {
         kindOfDisability: "",
         skill: ""
     })
+
     const handleChange = (event) => {
         setData({ ...data, [event.target.name]: event.target.value })
     };
-    const ServiceProviderInfo = async () => {
 
+
+
+    const [disability, setDisability] = useState([])
+    const GetDisabilityFromDB = async () => {
+        const response = await axios.get("http://localhost/api/disabilities.php");
+        setDisability(response.data);
+    }
+    useEffect(() => {
+        GetDisabilityFromDB();
+    }, []);
+
+    const [skill, setSkill] = useState([]);
+
+    const GetSkillFromDB = async () => {
+        const response = await axios.get("http://localhost/api/skills.php");
+        setSkill(response.data);
+    }
+    useEffect(() => {
+        GetSkillFromDB();
+    }, []);
+
+
+    const ServiceProviderInfo = async () => {
         const user = {
             id: data.id,
             serviceProviderUserId: data.serviceProviderUserId,
@@ -41,25 +66,7 @@ const HireMe = () => {
             user,
             { headers: { 'Content-Type': 'application/json' } }
         )
-
     };
-
-    const [skill, setSkill] = useState([])
-    const GetSkillsFromDB = async () => {
-        const response = await axios.get("http://localhost/api/skills.php");
-        setSkill(response.data);
-
-    }
-    useEffect(() => {
-        GetSkillsFromDB();
-    }, []);
-    const options = [
-        { value: data.skill, label: data.name },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-    ]
-    const classes = useStyles();
-    const history = useHistory();
 
     const [image, setImage] = React.useState("");
     const imageRef = React.useRef(null);
@@ -98,36 +105,58 @@ const HireMe = () => {
                     <div className={classes.items}>
                         {/* <TextField className={classes.inputField1} required id="outlined-basic" label="Location" variant="outlined" onChange={handleChange} /> */}
 
-                        <TextField className={classes.inputField1} required id="outlined-basic" label="kind of disability" variant="outlined" onChange={handleChange} />
+                        {/* <TextField className={classes.inputField1} required id="outlined-basic" label="kind of disability" variant="outlined" onChange={handleChange} /> */}
 
-                        <Select
-                            className={classes.selectField}
-                            isMulti
-                            name="colors"
-                            options={options}
-                            classNamePrefix="Your Skills"
-                        >
-                            {/* <MenuItem value={20}>Twenty</MenuItem> */}
-                        </Select>
+                        <FormControl variant="outlined" className={classes.inputField1}>
+                            <InputLabel id="demo-simple-select-outlined-label">kind of disability</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                // value={option}
+                                onChange={handleChange}
+                                label="kind of disability"
+                                name="kindOfDisability"
+                                defaultValue=""
+                            >
+                                {/* <MenuItem value="">
+                                    <em>None</em>
+                                </MenuItem> */}
+                                {disability.map((item) => {
+                                    return (
+                                        <MenuItem value={item.disabilityID}>{item.Name}</MenuItem>
+                                    )
+                                })}
+                            </Select>
+                        </FormControl>
+
+                        <FormControl variant="outlined" className={classes.inputField1}>
+                            <InputLabel id="demo-simple-select-outlined-label">Your Skill</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-outlined-label"
+                                id="demo-simple-select-outlined"
+                                // value={option}
+                                onChange={handleChange}
+                                label="kind of disability"
+                                name="kindOfDisability"
+                                defaultValue=""
+                            >
+                                {/* <MenuItem value="">
+                                    <em>None</em>
+                                </MenuItem> */}
+                                {skill.map((item) => {
+                                    return (
+                                        <MenuItem value={item.id}>{item.name}</MenuItem>
+                                    )
+                                })}
+                            </Select>
+                        </FormControl>
+
+
 
                         <div className={classes.inputImage}>
                             <div className={classes.firstImage}>
                                 <label htmlFor="contained-button-file">
-                                    Your ID
-                                {/* <Button className={classes.inputField2} variant="contained" color="primary" component="span" endIcon={<MdAttachFile />}>
-                                    Your ID
-                                </Button> */}
-                                    {/* <input
-                                    accept="image/*"
-                                    className={classes.input}
-                                    id="contained-button-file"
-                                    multiple
-                                    type="file"
-                                    onChange={(e) => {
-                                        setImage(e.target.files[0]);
-                                        uploader(e);
-                                    }}
-                                /> */}
+                                    uplode your ID and your supporting documents
                                 </label>
                                 <input
                                     accept="image/*"
@@ -140,52 +169,10 @@ const HireMe = () => {
                                         uploader(e);
                                     }}
                                 />
-                                {result && <img className={classes.imageDifv} ref={imageRef} src={result} alt="" />}
-                            </div>
-                            <div className={classes.secondImage}>
-                                <label htmlFor="contained-button-file">
-                                    Your supporting documents
-                                {/* <Button className={classes.inputField2} variant="contained" color="primary" component="span" endIcon={<MdAttachFile />} >
-                                    Your supporting documents
-                                </Button> */}
-                                    {/* <input
-                                    accept="image/*"
-                                    className={classes.input}
-                                    id="contained-button-file"
-                                    multiple
-                                    type="file"
-                                    onChange={(e) => {
-                                        setImage(e.target.files[0]);
-                                        uploader(e);
-                                    }}
-                                /> */}
-                                </label>
-                                <input
-                                    accept="image/*"
-                                    className={classes.input}
-                                    id="contained-button-file"
-                                    multiple
-                                    type="file"
-                                    onChange={(e) => {
-                                        setImage(e.target.files[0]);
-                                        uploader(e);
-                                    }}
-                                />
+                                <br />
                                 {result && <img className={classes.imageDifv} ref={imageRef} src={result} alt="" />}
                             </div>
 
-                            {/* <div className={classes.imageDifv}>
-                                <input
-                                    accept="image/*"
-                                    // multiple
-                                    type="file"
-                                    onChange={(e) => {
-                                        setImage(e.target.files[0]);
-                                        uploader(e);
-                                    }}
-                                />
-                                {result && <img className={classes.imageDifv} ref={imageRef} src={result} alt="" />}
-                            </div> */}
                         </div>
                     </div>
                     <div className={classes.item}>

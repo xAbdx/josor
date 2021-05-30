@@ -67,7 +67,7 @@ const NavbarDashboard = () => {
                     <li className={classes.item}>
                         <NavLink
                             exact
-                            to="/dashboard"
+                            to="/skills"
                             activeClassName={classes.activeStyle}
                             className={classes.link}
                         >

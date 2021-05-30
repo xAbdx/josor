@@ -22,12 +22,13 @@ const NewJob = () => {
     })
     // check the price if it takes on phpmyadmin
 
-    const [option, setOption] = useState([]);
 
     const handleChange = (event) => {
         setData({ ...data, [event.target.name]: event.target.value })
         // setOption({ ...data, [event.target.name]: event.target.value });
     };
+
+    const [option, setOption] = useState([]);
 
     const GetCategoryFromDB = async () => {
         const response = await axios.get("http://localhost/api/skills.php");
@@ -47,6 +48,30 @@ const NewJob = () => {
     const history = useHistory();
 
     const insertJob = async () => {
+        if (data['Job_Title'] === undefined || data['Job_Title'].length === 0) {
+            alert('Job Title cannot be empty');
+            return;
+        };
+        const format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        //            ^                                       ^   
+        if (format.test(data['Job_Title'])) {
+            alert('Job Title should contain only charecters ');
+            return;
+        };
+
+        if (data['Job_description'] === undefined || data['Job_description'].length === 0) {
+            alert('Job Description cannot be empty');
+            return;
+        };
+        if (data['price'] === undefined || data['price'].length === 0) {
+            alert('price cannot be empty');
+            return;
+        };
+        if (data['Skill_ID'] === undefined || data['Skill_ID'].length === 0) {
+            alert('Please select category');
+            return;
+        };
+
         const newJob = {
             Job_ID: data.Job_ID,
             Job_Title: data.Job_Title,
