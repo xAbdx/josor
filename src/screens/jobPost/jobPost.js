@@ -19,6 +19,11 @@ const job = {
 const JobPost = (props) => {
     const classes = useStyles();
 
+    const applicanting = async () => {
+        alert("Your application has been sent");
+        window.location.reload(false);
+    };
+
     return (
         <div>
             <Header />
@@ -48,7 +53,7 @@ const JobPost = (props) => {
                     </div>
                     <div className={classes.rightColumn}>
                         <p className={classes.priceContainer}>Price: <span className={classes.price}>$300.00</span></p>
-                        <Button className={classes.btn} variant="contained">Apply</Button>
+                        <Button className={classes.btn} variant="contained" onClick={applicanting}>Apply</Button>
                     </div>
                 </Card>
             </div>

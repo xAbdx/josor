@@ -86,7 +86,7 @@ const NewJob = () => {
         );
         console.log(res);
         if (res.data) {
-            alert('added successfully');
+            alert('Submitted!');
         }
         window.location.reload(false);
     };

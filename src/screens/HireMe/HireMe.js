@@ -63,7 +63,7 @@ const HireMe = () => {
         // console.log(imageFile);
 
         if (data['email'] === undefined || data['email'].length === 0) {
-            alert('Email cannot be empty');
+            alert('Please add your email');
             return;
         };
 
@@ -102,7 +102,7 @@ const HireMe = () => {
             { headers: { 'content-type': 'multipart/form-data' } }
         )
         if (response.data) {
-            alert('added successfully ');
+            alert('Submitted successfully!');
         }
         window.location.reload(false);
     };

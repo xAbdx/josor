@@ -96,6 +96,11 @@ const SingUp = () => {
         // if (res) {
         //     return history.push("/")
         // }
+        console.log(res);
+        if (res.data) {
+            alert('Welcome Please go to login page');
+        }
+        window.location.reload(false);
     };
 
     return (
