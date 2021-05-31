@@ -13,6 +13,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import { Redirect } from 'react-router-dom';
+import { TextField } from "@material-ui/core";
 
 
 const HireMe = () => {
@@ -22,15 +23,19 @@ const HireMe = () => {
     const [data, setData] = React.useState({
         id: "",
         serviceProviderUserId: "",
-        location: "",
+        email: "",
         kindOfDisability: "",
-        skill: ""
+        skill: "",
+        imageFile: ""
     })
 
     const handleChange = (event) => {
         setData({ ...data, [event.target.name]: event.target.value })
     };
 
+    const handleChangeFile = (event) => {
+        setData({ ...data, [event.target.name]: event.target.files[0] })
+    };
 
 
     const [disability, setDisability] = useState([])
@@ -54,18 +59,52 @@ const HireMe = () => {
 
 
     const ServiceProviderInfo = async () => {
-        const user = {
-            id: data.id,
-            serviceProviderUserId: data.serviceProviderUserId,
-            location: data.location,
-            kindOfDisability: data.kindOfDisability,
-            skill: data.skill,
+        console.log(data);
+        // console.log(imageFile);
+
+        if (data['email'] === undefined || data['email'].length === 0) {
+            alert('Email cannot be empty');
+            return;
         };
+
+        const emailRegex = /\S+@\S+\.\S+/;
+        if (!emailRegex.test(data['email'])) {
+            alert('Invalid Email');
+            return;
+        };
+
+        if (data['kindOfDisability'] === undefined || data['kindOfDisability'].length === 0) {
+            alert('Please select Kind Of Disability');
+            return;
+        };
+
+        if (data['skill'] === undefined || data['skill'].length === 0) {
+            alert('Please select skill');
+            return;
+        };
+
+        if (data['imageFile'] === undefined || data['imageFile'].length === 0) {
+            alert('Please add image');
+            return;
+        };
+
+        const formData = new FormData();
+        formData.append('id', data.id)
+        formData.append('serviceProviderUserId', data.serviceProviderUserId)
+        formData.append('email', data.email)
+        formData.append('kindOfDisability', data.kindOfDisability)
+        formData.append('skill', data.skill)
+        formData.append('imageFile', data.imageFile)
+
         const response = await axios.post(
-            'http://localhost/api/user.php',
-            user,
-            { headers: { 'Content-Type': 'application/json' } }
+            'http://localhost/api/HireMe.php',
+            formData,
+            { headers: { 'content-type': 'multipart/form-data' } }
         )
+        if (response.data) {
+            alert('added successfully ');
+        }
+        window.location.reload(false);
     };
 
     const [image, setImage] = React.useState("");
@@ -103,9 +142,7 @@ const HireMe = () => {
                 </div>
                 <div className={classes.card}>
                     <div className={classes.items}>
-                        {/* <TextField className={classes.inputField1} required id="outlined-basic" label="Location" variant="outlined" onChange={handleChange} /> */}
-
-                        {/* <TextField className={classes.inputField1} required id="outlined-basic" label="kind of disability" variant="outlined" onChange={handleChange} /> */}
+                        <TextField className={classes.inputField1} required id="outlined-basic" label="Email" variant="outlined" value={data.email} onChange={handleChange} name="email" onChange={handleChange} type="email" />
 
                         <FormControl variant="outlined" className={classes.inputField1}>
                             <InputLabel id="demo-simple-select-outlined-label">kind of disability</InputLabel>
@@ -136,8 +173,8 @@ const HireMe = () => {
                                 id="demo-simple-select-outlined"
                                 // value={option}
                                 onChange={handleChange}
-                                label="kind of disability"
-                                name="kindOfDisability"
+                                label="Your Skill"
+                                name="skill"
                                 defaultValue=""
                             >
                                 {/* <MenuItem value="">
@@ -156,7 +193,7 @@ const HireMe = () => {
                         <div className={classes.inputImage}>
                             <div className={classes.firstImage}>
                                 <label htmlFor="contained-button-file">
-                                    uplode your ID and your supporting documents
+                                    upload your ID and your supporting documents
                                 </label>
                                 <input
                                     accept="image/*"
@@ -164,10 +201,8 @@ const HireMe = () => {
                                     id="contained-button-file"
                                     multiple
                                     type="file"
-                                    onChange={(e) => {
-                                        setImage(e.target.files[0]);
-                                        uploader(e);
-                                    }}
+                                    name="imageFile"
+                                    onChange={handleChangeFile}
                                 />
                                 <br />
                                 {result && <img className={classes.imageDifv} ref={imageRef} src={result} alt="" />}
@@ -202,4 +237,3 @@ const HireMe = () => {
 }
 
 export default HireMe;
-

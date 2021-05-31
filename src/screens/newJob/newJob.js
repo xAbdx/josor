@@ -85,6 +85,10 @@ const NewJob = () => {
             { headers: { 'Content-Type': 'application/json' } }
         );
         console.log(res);
+        if (res.data) {
+            alert('added successfully');
+        }
+        window.location.reload(false);
     };
 
     return (

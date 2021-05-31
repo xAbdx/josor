@@ -19,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
         margin: "auto",
         justifyContent: "center",
         alignItems: "center",
+        padding: "20px",
     },
     items: {
         margin: "30px 0px 0px 0px",
