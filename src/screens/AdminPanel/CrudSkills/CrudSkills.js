@@ -69,8 +69,8 @@ const Skill = () => {
                 <div className={classes.items}>
                     <h1 className={classes.title}>Manage Skills</h1>
                     <div className={classes.addSection}>
-                        <TextField id="filled-basic" autoComplete='off' name="user" label="Skill Name" variant="filled" onChange={handleChange} />
-                        <TextField id="filled-basic" autoComplete='off' name="skill" label="Skill description" variant="filled" onChange={handleChange} />
+                        <TextField id="filled-basic" autoComplete='off' name="user" label="User id" variant="filled" onChange={handleChange} />
+                        <TextField id="filled-basic" autoComplete='off' name="skill" label="Skill id" variant="filled" onChange={handleChange} />
                         <Button variant="contained" color="primary" onClick={insertSkill}>
                             Add Skills
                         </Button>
