@@ -75,11 +75,11 @@ const JobPost = (props) => {
                                 </div>
                                 <div className={classes.rightColumn}>
                                     <p className={classes.priceContainer}>Price: <span className={classes.price}>${data.price}</span></p>
+                                    <Button className={classes.btn} variant="contained" onClick={applicanting}>Apply</Button>
                                 </div>
                             </div>
                         )
                     })}
-                    <Button className={classes.btn} variant="contained" onClick={applicanting}>Apply</Button>
                 </Card>
             </div>
             <Footer />
