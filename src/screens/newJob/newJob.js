@@ -52,13 +52,6 @@ const NewJob = () => {
             alert('Job Title cannot be empty');
             return;
         };
-        const format = /[ `!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
-        //            ^                                       ^   
-        if (format.test(data['Job_Title'])) {
-            alert('Job Title should contain only charecters ');
-            return;
-        };
-
         if (data['Job_description'] === undefined || data['Job_description'].length === 0) {
             alert('Job Description cannot be empty');
             return;

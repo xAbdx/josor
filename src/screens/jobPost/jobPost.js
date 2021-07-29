@@ -48,39 +48,38 @@ const JobPost = (props) => {
             <Header />
             <div className={classes.root}>
                 <Card className={classes.card}>
-
-                    <div className={classes.leftColumn}>
-                        <div>
-                            <CardMedia
-                                className={classes.media}
-                                image={skill1}
-                                title=""
-                            />
-                        </div>
-
-                        {jobsBySection.map((data) => {
-                            return (
-                                <div>
-                                    <CardContent>
-                                        <Typography className={classes.title} gutterBottom>
-                                            {data.title}
-                                        </Typography>
-                                        <Typography className={classes.date} color="textSecondary">
-                                            {data.date}
-                                        </Typography>
-                                        <Typography variant="body2" component="p" className={classes.description}>
-                                            {data.description}
-                                        </Typography>
-                                    </CardContent>
+                    <div>
+                        <CardMedia
+                            className={classes.media}
+                            image={skill1}
+                            title=""
+                        />
+                    </div>
+                    {jobsBySection.map((data) => {
+                        return (
+                            <div>
+                                <div className={classes.leftColumn}>
+                                    <div>
+                                        <CardContent>
+                                            <Typography className={classes.title} gutterBottom>
+                                                {data.title}
+                                            </Typography>
+                                            <Typography className={classes.date} color="textSecondary">
+                                                {data.date}
+                                            </Typography>
+                                            <Typography variant="body2" component="p" className={classes.description}>
+                                                {data.description}
+                                            </Typography>
+                                        </CardContent>
+                                    </div>
                                 </div>
-                            )
-                        })}
-
-                    </div>
-                    <div className={classes.rightColumn}>
-                        <p className={classes.priceContainer}>Price: <span className={classes.price}>$300.00</span></p>
-                        <Button className={classes.btn} variant="contained" onClick={applicanting}>Apply</Button>
-                    </div>
+                                <div className={classes.rightColumn}>
+                                    <p className={classes.priceContainer}>Price: <span className={classes.price}>${data.price}</span></p>
+                                </div>
+                            </div>
+                        )
+                    })}
+                    <Button className={classes.btn} variant="contained" onClick={applicanting}>Apply</Button>
                 </Card>
             </div>
             <Footer />
