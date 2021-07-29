@@ -32,9 +32,9 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "center",
         alignItems: "center",
     },
-    // item: {
-    //     width: "90%"
-    // },
+    item: {
+        width: "100%"
+    },
     title: {
         fontSize: "2.5em",
     },
@@ -47,7 +47,11 @@ const useStyles = makeStyles((theme) => ({
         margin: "50px auto",
     },
     AccordionMargin: {
-        marginRight: "15px"
+        marginRight: "15px",
+        width: "100%"
+    },
+    listItemDiv: {
+        width: "100%"
     }
 }))
 
