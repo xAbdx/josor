@@ -41,7 +41,7 @@ const ApproveServiceProvider = () => {
                             {
                                 data.map((item) => {
                                     return (
-                                        <div >
+                                        <div className={classes.listItemDiv} >
                                             <ListItem>
                                                 <Accordion className={classes.AccordionMargin}>
                                                     <AccordionSummary

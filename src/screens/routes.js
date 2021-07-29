@@ -20,6 +20,7 @@ import CrudMessages from "./AdminPanel/CrudMessages/CrudMessages";
 import ShowUsers from "./AdminPanel/ShowUsers/ShowUsers";
 import Faq from "./AdminPanel/faqs/faqs";
 import CrudSkills from "./AdminPanel/CrudSkills/CrudSkills";
+import Profile from "./profile/profile";
 
 const Routes = () => {
     return (
@@ -72,6 +73,9 @@ const Routes = () => {
                 </Route>
                 <Route path="/skills">
                     <CrudSkills />
+                </Route>
+                <Route path="/profile">
+                    <Profile />
                 </Route>
             </Switch>
         </Router>
