@@ -3,8 +3,6 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    // Link,
-    // useParams
 } from "react-router-dom";
 import Login from './login/login';
 import SignUp from './signUp/signUp';
@@ -45,7 +43,7 @@ const Routes = () => {
                 <Route path="/new-job">
                     <NewJob />
                 </Route>
-                <Route path="/job-section">
+                <Route path="/job-section/:id">
                     <JobSection />
                 </Route>
                 <Route path="/faq">

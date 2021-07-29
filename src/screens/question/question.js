@@ -13,28 +13,17 @@ import axios from 'axios';
 
 
 
-// const objs = [
-//     {
-//         question: "What is Josor?",
-//         answer: "It is a long established fact that a reader will be distracted by the  a page when looking at its layout",
-//         id: 1
-//     },
-
-//     {
-//         question: "What is Josor2?",
-//         answer: "It is a long established fact that a reader will be distracted by the  a page when looking at its layoutasdfsdafdasf",
-//         id: 2
-//     }
-// ]
 
 const Question = () => {
     const classes = useStyles();
-    const [question, setQuestion] = useState([])
+    const [question, setQuestion] = useState([]);
+
     const GetQuestionFromDB = async () => {
         const response = await axios.get("http://localhost/api/faq.php");
         setQuestion(response.data);
-       
+
     }
+
     useEffect(() => {
         GetQuestionFromDB();
     }, []);

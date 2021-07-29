@@ -25,6 +25,7 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-evenly",
         alignItems: "center",
         flexWrap: "wrap",
+        
     },
     item1: {
         margin: "30px auto",

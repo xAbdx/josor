@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import { useRouteMatch } from "react-router-dom";
 
 const job = {
     id: 1,
@@ -17,6 +18,9 @@ const job = {
 }
 
 const JobPost = (props) => {
+    let { params } = useRouteMatch();
+
+    console.log(params.id);
     const classes = useStyles();
 
     const applicanting = async () => {

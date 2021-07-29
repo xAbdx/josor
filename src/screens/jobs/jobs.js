@@ -9,12 +9,14 @@ const Jobs = () => {
     const classes = useStyles();
     let { params } = useRouteMatch();
     
-    const [jobsBySection, setJobsBySection] = useState([])
+    const [jobsBySection, setJobsBySection] = useState([]);
+    
     const GetJobsFromDB = async () => {
         const response = await axios.get("http://localhost/api/jobs.php?skill_id=" + params.id);
         if (response.data.length > 0)
             setJobsBySection(response.data);
     }
+
     useEffect(() => {
         GetJobsFromDB();
     }, []);

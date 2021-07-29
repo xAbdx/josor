@@ -13,10 +13,9 @@ const JobCard = (props) => {
     const history = useHistory();
     const { job } = props;
 
-
-    const handleClick = async () => {
-        history.push(`/job-section`);
-
+    const handleClick = (jobId) => {
+       
+        history.push(`/job-section/${jobId}`);
     };
 
     return (
@@ -24,31 +23,31 @@ const JobCard = (props) => {
             {/* <p key={`job_posts${job.id}`}></p> */}
             <div className={classes.root}>
                 <Card className={classes.card}>
-                    <div className={classes.leftColumn} onClick={ handleClick}>
-                        <div>
-                            <CardMedia
-                                className={classes.media}
-                                image={skill1}
-                                title=""
-                            />
+                        <div className={classes.leftColumn}>
+                            <div>
+                                <CardMedia
+                                    className={classes.media}
+                                    image={skill1}
+                                    title=""
+                                />
+                            </div>
+                            <div>
+                                <CardContent>
+                                    <Typography className={classes.title} gutterBottom>
+                                        {job.title}
+                                    </Typography>
+                                    <Typography className={classes.date} color="textSecondary">
+                                        {job.createdDate}
+                                    </Typography>
+                                    <Typography variant="body2" component="p" className={classes.description}>
+                                        {job.description}
+                                    </Typography>
+                                </CardContent>
+                            </div>
                         </div>
-                        <div>
-                            <CardContent>
-                                <Typography className={classes.title} gutterBottom>
-                                    {job.title}
-                                </Typography>
-                                <Typography className={classes.date} color="textSecondary">
-                                    {job.createdDate}
-                                </Typography>
-                                <Typography variant="body2" component="p" className={classes.description}>
-                                    {job.description}
-                                </Typography>
-                            </CardContent>
-                        </div>
-                    </div>
                     <div className={classes.rightColumn}>
                         <p className={classes.btn}>${job.price}</p>
-                        <Button className={classes.btn} size="small">Apply</Button>
+                        <Button className={classes.btn} size="small" onClick={(item) => handleClick(job.id)}>Apply</Button>
                     </div>
                 </Card>
             </div>
