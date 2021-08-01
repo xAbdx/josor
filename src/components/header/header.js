@@ -24,7 +24,7 @@ const Header = () => {
         } else {
             return (
                 <ul className={classes.list1}>
-                    <li><NavLink exact to="/home" activeClassName={classes.activeStyle} className={classes.link}>Account</NavLink></li>
+                    <li><NavLink exact to="/profile" activeClassName={classes.activeStyle} className={classes.link}>Account</NavLink></li>
                     <li><NavLink exact to="/" activeClassName={classes.activeStyle} onClick={clearLogin} className={classes.link}>logout</NavLink></li>
                 </ul>
             )

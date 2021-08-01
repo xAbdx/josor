@@ -64,9 +64,9 @@ const JobPost = (props) => {
                                             <Typography className={classes.title} gutterBottom>
                                                 {data.title}
                                             </Typography>
-                                            <Typography className={classes.date} color="textSecondary">
+                                            {/* <Typography className={classes.date} color="textSecondary">
                                                 {data.date}
-                                            </Typography>
+                                            </Typography> */}
                                             <Typography variant="body2" component="p" className={classes.description}>
                                                 {data.description}
                                             </Typography>
