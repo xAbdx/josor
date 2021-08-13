@@ -26,9 +26,9 @@ const Jobs = () => {
             <Header />
             <div className={classes.container}>
                 {/* <p>id: {params.id}</p> */}
-                {jobsBySection.map((job) => {
+                {jobsBySection.map((job,idx) => {
                     return (
-                        <JobCard job={job} />
+                        <JobCard key={idx} job={job} />
                     )
                 })}
             </div>

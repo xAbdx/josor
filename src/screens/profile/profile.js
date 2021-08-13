@@ -165,8 +165,8 @@ const Profile = () => {
                       className={classes.inputFieldTextarea}
                       id="outlined-basic"
                       variant="outlined"
-                      rowsMax={5}
-                      rowsMin={5}
+                      maxRows={5}
+                      minRows={5}
                       aria-label="maximum height"
                       placeholder="Your Post..."
                       name="your_post"

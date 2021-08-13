@@ -21,13 +21,14 @@ import ShowUsers from "./AdminPanel/ShowUsers/ShowUsers";
 import Faq from "./AdminPanel/faqs/faqs";
 import CrudSkills from "./AdminPanel/CrudSkills/CrudSkills";
 import Profile from "./profile/profile";
+import ServiceProvider from './ServiceProvider/ServiceProvider';
 
 const Routes = () => {
     return (
         <Router>
             <Switch>
                 <Route exact path="/">
-                    <Login />
+                    <Home />
                 </Route>
                 <Route exact path="/sign-up">
                     <SignUp />
@@ -35,8 +36,8 @@ const Routes = () => {
                 <Route exact path="/jobs/:id">
                     <Jobs />
                 </Route>
-                <Route path="/home">
-                    <Home />
+                <Route path="/login">
+                    <Login />
                 </Route>
                 <Route path="/hireme">
                     <HireMe />
@@ -77,6 +78,10 @@ const Routes = () => {
                 <Route path="/profile">
                     <Profile />
                 </Route>
+                <Route path="/hire-people">
+                    <ServiceProvider />
+                </Route>
+                
             </Switch>
         </Router>
     );

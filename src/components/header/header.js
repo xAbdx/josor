@@ -9,6 +9,7 @@ const Header = () => {
 
     const clearLogin = async () => {
         localStorage.removeItem('isAuthorized');
+        localStorage.removeItem('userID');
 
     };
 
@@ -20,19 +21,19 @@ const Header = () => {
 
     const renderAuthButton = () => {
         if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === null) {
-            return <li><NavLink exact to="/" activeClassName={classes.activeStyle} className={classes.link}>login</NavLink></li>;
+            return <li><NavLink exact to="/login" activeClassName={classes.activeStyle} className={classes.link}>login</NavLink></li>;
         } else {
             return (
                 <ul className={classes.list1}>
                     <li><NavLink exact to="/profile" activeClassName={classes.activeStyle} className={classes.link}>Account</NavLink></li>
-                    <li><NavLink exact to="/" activeClassName={classes.activeStyle} onClick={clearLogin} className={classes.link}>logout</NavLink></li>
+                    <li><NavLink exact to="/login" activeClassName={classes.activeStyle} onClick={clearLogin} className={classes.link}>logout</NavLink></li>
                 </ul>
             )
         }
     }
 
     const redirectLogo = () => {
-        history.push(`/home`)
+        history.push(`/`)
 
     }
 
@@ -43,15 +44,15 @@ const Header = () => {
             </div>
             <div>
                 <ul className={classes.list}>
-                    <li><NavLink exact to="/home" activeClassName={classes.activeStyle} className={classes.link}>Home</NavLink></li>
+                    <li><NavLink exact to="/" activeClassName={classes.activeStyle} className={classes.link}>Home</NavLink></li>
 
-                    {/* <li><a href="" className={classes.link}>Jobs</a></li> */}
-                    {/* <li><a href="" className={classes.link}>Account</a></li> */}
+                   
 
                     <li><NavLink exact to="/faq" activeClassName={classes.activeStyle} className={classes.link}>FAQ</NavLink></li>
 
-                    <li><NavLink exact to="/hireme" activeClassName={classes.activeStyle} onClick={beServiceProviderAuthButton} className={classes.link}>Be Service Provider</NavLink></li>
+                    <li><NavLink exact to="/hireme" activeClassName={classes.activeStyle} onClick={beServiceProviderAuthButton} className={classes.link}>Hire me </NavLink></li>
 
+                    <li><NavLink exact to="/hire-people" activeClassName={classes.activeStyle} onClick={beServiceProviderAuthButton} className={classes.link}>Hire People</NavLink></li>
                     {renderAuthButton()}
 
                 </ul>

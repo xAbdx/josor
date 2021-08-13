@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { useRouteMatch } from "react-router-dom";
 import axios from 'axios';
+import { useHistory } from "react-router-dom";
 
 // const job = {
 //     id: 1,
@@ -24,8 +25,7 @@ const JobPost = (props) => {
     const [jobsBySection, setJobsBySection] = useState([]);
 
     const GetJobsFromDB = async () => {
-        const response = await axios.get("http://localhost/api/jobs.php?skill_id=" + params.id);
-        console.log(response.data);
+        const response = await axios.get("http://localhost/api/job-section.php?skill_id=" + params.id);
 
         if (response.data.length > 0)
             setJobsBySection(response.data);
@@ -35,12 +35,13 @@ const JobPost = (props) => {
         GetJobsFromDB();
     }, []);
 
-    console.log(params.id);
     const classes = useStyles();
+    const history = useHistory();
 
-    const applicanting = async () => {
+    const sendApplication = async () => {
         alert("Your application has been sent");
-        window.location.reload(false);
+        console.log(localStorage.getItem('userID'));
+        history.push('/');
     };
 
     return (
@@ -55,9 +56,9 @@ const JobPost = (props) => {
                             title=""
                         />
                     </div>
-                    {jobsBySection.map((data) => {
+                    {jobsBySection.map((data, idx) => {
                         return (
-                            <div>
+                            <div key={idx}>
                                 <div className={classes.leftColumn}>
                                     <div>
                                         <CardContent>
@@ -75,7 +76,7 @@ const JobPost = (props) => {
                                 </div>
                                 <div className={classes.rightColumn}>
                                     <p className={classes.priceContainer}>Price: <span className={classes.price}>${data.price}</span></p>
-                                    <Button className={classes.btn} variant="contained" onClick={applicanting}>Apply</Button>
+                                    <Button className={classes.btn} variant="contained" onClick={sendApplication}>Apply</Button>
                                 </div>
                             </div>
                         )
