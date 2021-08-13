@@ -59,9 +59,7 @@ const HireMe = () => {
 
 
     const ServiceProviderInfo = async () => {
-        console.log(data);
-        // console.log(imageFile);
-
+        
         if (data['email'] === undefined || data['email'].length === 0) {
             alert('Please add your email');
             return;
@@ -95,6 +93,7 @@ const HireMe = () => {
         formData.append('kindOfDisability', data.kindOfDisability)
         formData.append('skill', data.skill)
         formData.append('imageFile', data.imageFile)
+        formData.append('userID',localStorage.getItem('userID'));
 
         const response = await axios.post(
             'http://localhost/api/HireMe.php',
@@ -158,9 +157,9 @@ const HireMe = () => {
                                 {/* <MenuItem value="">
                                     <em>None</em>
                                 </MenuItem> */}
-                                {disability.map((item) => {
+                                {disability.map((item,idx) => {
                                     return (
-                                        <MenuItem value={item.disabilityID}>{item.Name}</MenuItem>
+                                        <MenuItem key={idx} value={item.disabilityID}>{item.Name}</MenuItem>
                                     )
                                 })}
                             </Select>
@@ -180,9 +179,9 @@ const HireMe = () => {
                                 {/* <MenuItem value="">
                                     <em>None</em>
                                 </MenuItem> */}
-                                {skill.map((item) => {
+                                {skill.map((item,idx) => {
                                     return (
-                                        <MenuItem value={item.id}>{item.name}</MenuItem>
+                                        <MenuItem key={idx} value={item.id}>{item.name}</MenuItem>
                                     )
                                 })}
                             </Select>
@@ -224,7 +223,7 @@ const HireMe = () => {
                             className={classes.btnCancel}
                             variant="contained"
                             color="secondary"
-                            onClick={() => history.push("/home")}
+                            onClick={() => history.push("/")}
                             startIcon={<MdDeleteForever />}>
                             Cancel
                         </Button>

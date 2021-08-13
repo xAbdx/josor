@@ -13,8 +13,6 @@ const Login = () => {
     const [data, setData] = React.useState({})
 
     const handleChange = (event) => {
-
-
         setData({ ...data, [event.target.name]: event.target.value })
     };
 
@@ -44,8 +42,9 @@ const Login = () => {
         )
 
         if (response.data['isValid'] == true) {
-            history.push("/home")
+            history.push("/")
             localStorage.setItem('isAuthorized', true);
+            localStorage.setItem('userID', response.data['userID']);
         }
         else {
             alert(response.data['errorMessage']);
@@ -62,9 +61,9 @@ const Login = () => {
                     <div className={classes.colored}>
                         <h1 className={classes.titleColor}>Login</h1>
                         <div className={classes.textFields}>
-                            <TextField className={classes.inputField1} id="outlined-basic name" name="UserName" label="User Name" variant="outlined" onChange={handleChange} />
+                            <TextField className={classes.inputField1} id="outlined-basic name" name="UserName" label="User Name" variant="outlined" onChange={handleChange} autoComplete="off" />
 
-                            <TextField className={classes.inputField1} id="outlined-basic pass" name="Password" label="Password" variant="outlined" type="password" onChange={handleChange} />
+                            <TextField className={classes.inputField1} id="outlined-basic pass" name="Password" label="Password" variant="outlined" type="password" onChange={handleChange} autoComplete="off" />
 
                             <Button className={classes.btnColor} variant="contained" onClick={Login}>Login</Button>
 

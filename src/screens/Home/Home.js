@@ -35,6 +35,7 @@ const Home = () => {
     useEffect(() => {
         GetCategoryFromDB();
     }, []);
+    
     if (localStorage.getItem('isAuthorized') === false || localStorage.getItem('isAuthorized') === true)
         return <Redirect to='/' />
 

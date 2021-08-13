@@ -150,7 +150,7 @@ const NewJob = () => {
                     </div>
                     <div className={classes.item2}>
                         <Button className={classes.btn} color="primary" orientation="vertical" aria-label="vertical contained primary button group" variant="contained" onClick={insertJob}>Submit</Button>
-                        <Button className={classes.btnCancel} variant="contained" color="secondary" onClick={() => history.push("/home")} startIcon={<MdDeleteForever />}>Cancel</Button>
+                        <Button className={classes.btnCancel} variant="contained" color="secondary" onClick={() => history.push("/")} startIcon={<MdDeleteForever />}>Cancel</Button>
                     </div>
                 </div>
 
