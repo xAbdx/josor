@@ -11,6 +11,13 @@ import Typography from '@material-ui/core/Typography';
 import { useRouteMatch } from "react-router-dom";
 import axios from 'axios';
 import { useHistory } from "react-router-dom";
+import 'date-fns';
+import Grid from '@material-ui/core/Grid';
+import DateFnsUtils from '@date-io/date-fns';
+import {
+    MuiPickersUtilsProvider,
+    KeyboardDatePicker,
+} from '@material-ui/pickers';
 
 // const job = {
 //     id: 1,
@@ -26,22 +33,65 @@ const JobPost = (props) => {
 
     const GetJobsFromDB = async () => {
         const response = await axios.get("http://localhost/api/job-section.php?skill_id=" + params.id);
-
+        // var p = response.data.price;
         if (response.data.length > 0)
             setJobsBySection(response.data);
+        // console.log(response);
     }
 
     useEffect(() => {
         GetJobsFromDB();
-    }, []);
+    });
+
+
+    const priceApplication = jobsBySection.map((data) => {
+        return data.price
+    });
+    // console.log(priceApplication);
 
     const classes = useStyles();
     const history = useHistory();
 
+    const [dataOfApplication, setDataOfApplication] = React.useState({
+        id: "",
+        status: "on",
+        clientId: "",
+        serviceProviderId: "",
+        deliveryDate: "",
+        price: "",
+    });
+
+    // const handleChange = (event) => {
+    //     setDataOfApplication({ ...dataOfApplication, [event.target.name]: event.target.value })
+    // };
+
     const sendApplication = async () => {
+        const jobApplication = {
+            id: dataOfApplication.id,
+            status: "on",
+            clientId: dataOfApplication.clientId,
+            serviceProviderId: localStorage.getItem('userID'),
+            deliveryDate: selectedDate,
+            price: priceApplication[0],
+        };
+
+        const response = await axios.post(
+            'http://localhost/api/jobApplication.php',
+            jobApplication,
+            { headers: { 'content-type': 'multipart/form-data' } }
+        )
+        if (response.data) {
+            alert('Submitted successfully!');
+        }
         alert("Your application has been sent");
-        console.log(localStorage.getItem('userID'));
+        console.log(jobApplication);
         history.push('/');
+    };
+
+    const [selectedDate, setSelectedDate] = React.useState(new Date());
+
+    const handleDateChange1 = (date) => {
+        setSelectedDate(date);
     };
 
     return (
@@ -74,6 +124,22 @@ const JobPost = (props) => {
                                         </CardContent>
                                     </div>
                                 </div>
+                                <MuiPickersUtilsProvider utils={DateFnsUtils}>
+                                    <Grid container justifyContent="space-around">
+                                        <KeyboardDatePicker
+                                            margin="normal"
+                                            id="date-picker-dialog"
+                                            label="Delivery Date"
+                                            format="MM/dd/yyyy"
+                                            name="deliveryDate"
+                                            value={selectedDate}
+                                            onChange={handleDateChange1}
+                                            KeyboardButtonProps={{
+                                                'aria-label': 'change date',
+                                            }}
+                                        />
+                                    </Grid>
+                                </MuiPickersUtilsProvider>
                                 <div className={classes.rightColumn}>
                                     <p className={classes.priceContainer}>Price: <span className={classes.price}>${data.price}</span></p>
                                     <Button className={classes.btn} variant="contained" onClick={sendApplication}>Apply</Button>

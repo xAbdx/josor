@@ -139,7 +139,7 @@ const SingUp = () => {
 
                                 <Button className={classes.inputField1} className={clsx(classes.submet, classes.btnColor)} variant="contained" onClick={insertUser}>SIGN UP</Button>
 
-                                <Button className={classes.inputField1} className={classes.submet} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("") }}> Have an account login</Button>
+                                <Button className={classes.inputField1} className={classes.submet} variant="text" color="primary" aria-label="text primary button group" onClick={() => { history.push("/login") }}> Have an account login</Button>
                             </div>
                         </div>
                     </div>
